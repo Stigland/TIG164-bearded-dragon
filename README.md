@@ -10,24 +10,24 @@
 
 
 #### Naming conventions ####
->all component for x activity must be start with activity name
-all component should have prefix or short name like btn for button
-For example,name for login activity component should be like following.
+>all component for x activity must be start with activity name.
+>all component should have prefix or short name like btn for button.
+>For example,name for login activity component should be like following.
 
 >activity_login_btn_login
-activity_login_et_username
-activity_login_et_password
-Short name of major components
+>activity_login_et_username
+>activity_login_et_password
+>Short name of major components
 
 >Button - btn
-EditText - et
-TextView - tv
-Checkbox - chk
-RadioButton - rb
-ToggleButton - tb
-Spinner - spn
-Menu - mnu
-ListView - lv
-GalleryView - gv
-LinearLayout -ll
-RelativeLayout - rl
+>EditText - et
+>TextView - tv
+>Checkbox - chk
+>RadioButton - rb
+>ToggleButton - tb
+>Spinner - spn
+>Menu - mnu
+>ListView - lv
+>GalleryView - gv
+>LinearLayout -ll
+>RelativeLayout - rl
