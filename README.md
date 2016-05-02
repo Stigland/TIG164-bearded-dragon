@@ -33,3 +33,10 @@ For example,name for login activity component should be like following.
 * GalleryView - gv
 * LinearLayout -ll
 * RelativeLayout - rl
+
+#### Colors ####
+
+To set predefined colors or use existing ones, check res/values/colors.xml and use designated color for intended element.
+
+e.g.
+>darkBlue uses Dark Blue color
