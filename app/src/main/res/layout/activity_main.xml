@@ -13,25 +13,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kalender"
-        android:id="@+id/button"
-        android:layout_above="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kontakter"
-        android:id="@+id/button2"
-        android:layout_centerVertical="true"
+        android:id="@+id/menu_OpenCalendar_Btn"
+        android:layout_marginBottom="60dp"
+        android:layout_above="@+id/menu_OpenCheckIn_Btn"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Instämpling"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
+        android:text="Kontakter"
+        android:id="@+id/menu_OpenContacts_Btn"
+        android:layout_below="@+id/menu_OpenCheckIn_Btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="83dp" />
+        android:layout_marginTop="78dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instämpling"
+        android:id="@+id/menu_OpenCheckIn_Btn"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
