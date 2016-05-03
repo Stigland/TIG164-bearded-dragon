@@ -2,6 +2,7 @@ package com.example.leand.tig164_beardeddragon;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,10 +29,9 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openCalendarOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(getBaseContext(), CalendarActivity.class);
-                startActivity(i);
-                finish();
+            Intent i = new Intent(getBaseContext(), CalendarActivity.class);
+            startActivity(i);
+            finish();
             }
         };
         OpenCalendarBtn.setOnClickListener(openCalendarOnClickListener);
@@ -40,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openContactsOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                finish();
+            Intent i = new Intent(getBaseContext(), ContactsActivity.class);
+            startActivity(i);
+            finish();
             }
         };
         OpenContactsBtn.setOnClickListener(openContactsOnClickListener);
@@ -50,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openCheckInOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                finish();
+            Intent i = new Intent(getBaseContext(), CheckInActivity.class);
+            startActivity(i);
+            finish();
             }
         };
         OpenCheckInBtn.setOnClickListener(openCheckInOnClickListener);
