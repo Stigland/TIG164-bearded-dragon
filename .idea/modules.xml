@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TIG164_BeardedDragon.iml" filepath="$PROJECT_DIR$/TIG164_BeardedDragon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TIG164-bearded-dragon.iml" filepath="$PROJECT_DIR$/TIG164-bearded-dragon.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
