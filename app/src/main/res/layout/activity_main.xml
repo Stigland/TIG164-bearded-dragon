@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.leand.tig164_beardeddragon.MainActivity">
+    tools:context="com.example.leand.tig164_beardeddragon.MainActivity"
+    android:background="@color/lightBlue">
 
     <Button
         android:layout_width="wrap_content"
@@ -16,7 +17,9 @@
         android:id="@+id/menu_OpenCalendar_Btn"
         android:layout_marginBottom="60dp"
         android:layout_above="@+id/menu_OpenCheckIn_Btn"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@color/orange"
+        android:textColor="@color/darkBlue"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -25,7 +28,9 @@
         android:id="@+id/menu_OpenContacts_Btn"
         android:layout_below="@+id/menu_OpenCheckIn_Btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="78dp" />
+        android:layout_marginTop="78dp"
+        android:background="@color/orange"
+        android:textColor="@color/darkBlue"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -33,5 +38,8 @@
         android:text="Instämpling"
         android:id="@+id/menu_OpenCheckIn_Btn"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:background="@color/orange"
+        android:layout_alignRight="@+id/menu_OpenCalendar_Btn"
+        android:layout_alignEnd="@+id/menu_OpenCalendar_Btn"
+        android:textColor="@color/darkBlue"/>
 </RelativeLayout>
