@@ -1,4 +1,13 @@
-package com.example.leand.tig164_beardeddragon;
+package com.example.leand.tig164_beardeddragon.Contacts;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.example.leand.tig164_beardeddragon.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by edvin on 2016-05-04.
@@ -11,7 +20,7 @@ public class Contact {
     private String messengerURI;
     private String phone;
 
-    public Contact(int contactID, String name, String email, String messengerURI, String phone){
+    public Contact(int contactID, String name, String email, String messengerURI, String phone) {
 
         super();
         this.contactID = contactID;
@@ -61,4 +70,5 @@ public class Contact {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
 }
