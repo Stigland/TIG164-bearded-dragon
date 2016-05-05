@@ -1,4 +1,4 @@
-package com.example.leand.tig164_beardeddragon;
+package com.example.leand.tig164_beardeddragon.Contacts;
 
 /**
  * Created by edvin on 2016-05-04.
