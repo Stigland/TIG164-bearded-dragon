@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TIG164_BeardedDragon</string>
+    <string name="calendar">Calendar</string>
+    <string name="Check_in">Check In</string>
+    <string name="Contacts">Contacts</string>
+    <string name="interested">I\'m interested</string>
+    <string name="my_shifts">My shifts</string>
+    <string name="available_shifts">Available shifts</string>
+    <string name="absence_request">Absence request</string>
 </resources>
