@@ -6,6 +6,9 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.TextView;
+
+import java.util.Objects;
 
 
 import com.example.leand.tig164_beardeddragon.R;
@@ -18,6 +21,10 @@ public class CheckInActivity extends AppCompatActivity {
     private Button openMainBtn;
     private Switch checkInSW;
     private Switch takeBreakSW;
+    private CheckInTime checkIn;
+    private String timeStamp;
+    private boolean btnChecker;
+    private TextView checkInLogTV;
 
     //Sets functionality for back button
     View.OnClickListener backToMainOnClickListener = new View.OnClickListener() {
@@ -33,12 +40,24 @@ public class CheckInActivity extends AppCompatActivity {
     View.OnClickListener checkInOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
-            if(checkInSW.isChecked()){
+            // Elementary GUI functionality
+            long currentTime = System.currentTimeMillis();
+            btnChecker = checkInSW.isChecked();
+            checkIn = new CheckInTime("Godmorgon");
+            if(btnChecker){
                 takeBreakSW.setEnabled(true);
+                // checkIn.setCheckInTime(currentTime);
+                checkInLogTV.setText(checkIn.addToLogString(checkIn.getTimeString(true)));
+                // Add method showActivityInCheckInTF()
             }else{
+                takeBreakSW.setChecked(false);
                 takeBreakSW.setEnabled(false);
+                checkInLogTV.setText(checkIn.addToLogString(checkIn.getTimeString(false)));
+                //checkIn.setCheckOutTime(currentTime);
             }
+
+            // Add functionality for timestamps
+
         }
     };
 
@@ -46,7 +65,7 @@ public class CheckInActivity extends AppCompatActivity {
     View.OnClickListener takeBreakOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            //Note time, use db-affecting method in control, and show in textfield
         }
     };
 
@@ -65,10 +84,11 @@ public class CheckInActivity extends AppCompatActivity {
         checkInSW.setOnClickListener(checkInOnClickListener);
 
         // Connects break switch to xml and assigns listener
-        takeBreakSW = (Switch) findViewById(R.id.check_in_swBtn_checkIn);
+        takeBreakSW = (Switch) findViewById(R.id.check_in_swBtn_break);
+        //takeBreakSW.setEnabled(false);
         assert takeBreakSW != null;
         takeBreakSW.setOnClickListener(takeBreakOnClickListener);
+
+        checkInLogTV = (TextView) findViewById(R.id.check_in_log_tv);
     }
-
-
 }
