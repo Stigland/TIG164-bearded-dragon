@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.leand.tig164_beardeddragon.Calendar.CalendarActivity;
+import com.example.leand.tig164_beardeddragon.CheckIn.CheckInActivity;
+import com.example.leand.tig164_beardeddragon.Contacts.ContactsActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button OpenCalendarBtn;
