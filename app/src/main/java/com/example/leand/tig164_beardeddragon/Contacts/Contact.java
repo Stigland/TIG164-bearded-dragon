@@ -1,5 +1,4 @@
 package com.example.leand.tig164_beardeddragon.Contacts;
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -14,20 +13,20 @@ import java.util.List;
  */
 public class Contact {
 
-    private int contactID;
-    private String name;
-    private String email;
-    private String messengerURI;
-    private String phone;
+        private int contactID;
+        private String name;
+        private String email;
+        private String messengerURI;
+        private String phone;
 
-    public Contact(int contactID, String name, String email, String messengerURI, String phone) {
+        public Contact(int contactID, String name, String email, String messengerURI, String phone) {
 
-        super();
-        this.contactID = contactID;
-        this.name = name;
-        this.email = email;
-        this.messengerURI = messengerURI;
-        this.phone = phone;
+            super();
+            this.contactID = contactID;
+            this.name = name;
+            this.email = email;
+            this.messengerURI = messengerURI;
+            this.phone = phone;
 
     }
 
