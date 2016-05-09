@@ -51,13 +51,12 @@ public class CalendarActivity extends AppCompatActivity {
 
             @Override
             public void onSelectDate(Date date, View view) {
-                ColorDrawable lightBlue = new ColorDrawable(getResources().getColor(R.color.orange));
-                caldroidFragment.setBackgroundDrawableForDate(lightBlue, date);
+                //ColorDrawable lightBlue = new ColorDrawable(getResources().getColor(R.color.orange));
+                //caldroidFragment.setBackgroundDrawableForDate(lightBlue, date);
 
                 caldroidFragment.refreshView();
             }
         };
-
         caldroidFragment.setCaldroidListener(listener);
 
     }

@@ -11,7 +11,7 @@ public class CalendarEntry {
     private Date endDate;
     private boolean interested;
     private boolean availableShift; //This variable should be set by employer. For this example it's stored in this class.
-    private boolean bookedshift;
+    private boolean bookedShift;
     private boolean absenceRequest;
 
     private CalendarEntry (Date startDate,Date endDate, boolean interested,
@@ -20,7 +20,7 @@ public class CalendarEntry {
         this.endDate = endDate;
         this.interested = interested;
         this.availableShift = availableShift;
-        this.bookedshift = bookedshift;
+        this.bookedShift = bookedshift;
         this.absenceRequest = absenceRequest;
     }
 
@@ -57,11 +57,11 @@ public class CalendarEntry {
     }
 
     public boolean isBookedshift() {
-        return bookedshift;
+        return bookedShift;
     }
 
     public void setBookedshift(boolean bookedshift) {
-        this.bookedshift = bookedshift;
+        this.bookedShift = bookedshift;
     }
 
     public boolean isAbsenceRequest() {
