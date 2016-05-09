@@ -25,10 +25,6 @@ import java.util.Date;
 public class CalendarActivity extends AppCompatActivity {
 
     private Calendar cal = Calendar.getInstance();
-    ColorDrawable lightBlue = new ColorDrawable(getResources().getColor(R.color.lightBlue));
-    ColorDrawable lightGreen = new ColorDrawable(getResources().getColor(R.color.lightGreen));
-    ColorDrawable yellow = new ColorDrawable(getResources().getColor(R.color.yellow));
-    ColorDrawable orange = new ColorDrawable(getResources().getColor(R.color.orange));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +40,7 @@ public class CalendarActivity extends AppCompatActivity {
 
         args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
         args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
+        args.putInt(CaldroidFragment.START_DAY_OF_WEEK, CaldroidFragment.MONDAY);
         caldroidFragment.setArguments(args);
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -54,9 +51,8 @@ public class CalendarActivity extends AppCompatActivity {
 
             @Override
             public void onSelectDate(Date date, View view) {
-                final Date blueDate = cal.getTime();
-                ColorDrawable blue = new ColorDrawable(Color.BLUE);
-                caldroidFragment.setBackgroundDrawableForDate(blue, date);
+                ColorDrawable lightBlue = new ColorDrawable(getResources().getColor(R.color.orange));
+                caldroidFragment.setBackgroundDrawableForDate(lightBlue, date);
 
                 caldroidFragment.refreshView();
             }
