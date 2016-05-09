@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
             Intent i = new Intent(getBaseContext(), CalendarActivity.class);
             startActivity(i);
-            finish();
+            //finish();
             }
         };
         OpenCalendarBtn.setOnClickListener(openCalendarOnClickListener);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
             Intent i = new Intent(getBaseContext(), ContactsActivity.class);
             startActivity(i);
-            finish();
+            //finish();
             }
         };
         OpenContactsBtn.setOnClickListener(openContactsOnClickListener);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
             Intent i = new Intent(getBaseContext(), CheckInActivity.class);
             startActivity(i);
-            finish();
+            //finish();
             }
         };
         OpenCheckInBtn.setOnClickListener(openCheckInOnClickListener);
