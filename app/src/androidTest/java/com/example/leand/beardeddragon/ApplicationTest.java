@@ -1,4 +1,4 @@
-package com.example.leand.tig164_beardeddragon;
+package com.example.leand.beardeddragon;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.example.leand.tig164_beardeddragon;
+package com.example.leand.tig164_beardeddragon.CheckIn;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

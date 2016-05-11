@@ -13,8 +13,11 @@
         android:layout_gravity="center_horizontal" />
 
     <ExpandableListView
-        android:layout_width="match_parent"
+        android:id="@+id/expandableListView"
         android:layout_height="match_parent"
-        android:id="@+id/contactsListView"
-        tools:listitem="@android:layout/simple_expandable_list_item_2" />
+        android:layout_width="match_parent"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp" />
+
 </LinearLayout>
