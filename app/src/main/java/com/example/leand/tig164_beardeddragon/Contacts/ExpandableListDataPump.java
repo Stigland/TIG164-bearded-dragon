@@ -32,9 +32,9 @@ public class ExpandableListDataPump {
         List <Contact> cl = new ArrayList<Contact>();
 
         cl.add (new Contact(1234, "Edvin Stigland", "edvin@stigland.se", "edvinstigland", "0730502103"));
-        cl.add (new Contact(1234, "Johannes Leander", "johannes@leander.se", "johannesleander", "0760506067"));
-        cl.add (new Contact(1234, "Anton Wahlberg", "anton@wahlberg.se", "antonwahlberg", "0707564321"));
-        cl.add (new Contact(1234, "Mikaela Holmer", "mikaela@holmer.se", "mikaelaholmer", "0720896745"));
+        cl.add (new Contact(2134, "Johannes Leander", "johannes@leander.se", "johannesleander", "0760506067"));
+        cl.add (new Contact(1324, "Anton Wahlberg", "anton@wahlberg.se", "antonwahlberg", "0707564321"));
+        cl.add (new Contact(1243, "Mikaela Holmer", "mikaela@holmer.se", "mikaelaholmer", "0720896745"));
 
         return cl;
 
