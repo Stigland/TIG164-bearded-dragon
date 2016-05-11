@@ -11,6 +11,8 @@ import android.widget.TextView;
 import java.util.Objects;
 
 
+import com.example.leand.tig164_beardeddragon.CheckInTime;
+import com.example.leand.tig164_beardeddragon.MainActivity;
 import com.example.leand.tig164_beardeddragon.R;
 
 /**

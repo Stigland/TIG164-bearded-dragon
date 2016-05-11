@@ -24,11 +24,11 @@ public class CheckInTime{
     }
 
     public void setCheckInTime(long currentTime){
-
+        // add code for database editing
     }
 
     public void setCheckOutTime(long currentTime){
-
+        // add code for database editing
     }
 
     public String getTimeString(boolean inOrOut) {
