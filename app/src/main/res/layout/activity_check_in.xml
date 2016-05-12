@@ -29,10 +29,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="07:57: Checked in "
                 android:id="@+id/check_in_log_tv"
                 android:clickable="false"
-                android:focusable="false" />
+                android:focusable="false"
+                android:singleLine="false" />
         </ScrollView>
     </LinearLayout>
 

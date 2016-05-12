@@ -7,23 +7,19 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
-
 import java.util.Objects;
-
-import com.example.leand.tig164_beardeddragon.CheckInTime;
+import com.example.leand.tig164_beardeddragon.CheckIn.CheckInTime;
 import com.example.leand.tig164_beardeddragon.MainActivity;
 import com.example.leand.tig164_beardeddragon.R;
 
 /**
  * Created by leand on 2016-05-03.
  */
-public class CheckInActivity extends AppCompatActivity {
+public class CheckInActivity extends AppCompatActivity{
 
     private Button openMainBtn;
     private Switch checkInSW;
     private Switch takeBreakSW;
-    private CheckInTime checkIn;
-    private String timeStamp;
     private boolean btnChecker;
     private TextView checkInLogTV;
 
@@ -33,7 +29,7 @@ public class CheckInActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent i = new Intent(getBaseContext(), MainActivity.class);
             startActivity(i);
-            finish();
+            //finish();
         }
     };
 
@@ -41,24 +37,17 @@ public class CheckInActivity extends AppCompatActivity {
     View.OnClickListener checkInOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            // Elementary GUI functionality
-            long currentTime = System.currentTimeMillis();
             btnChecker = checkInSW.isChecked();
-            checkIn = new CheckInTime("Godmorgon");
             if(btnChecker){
                 takeBreakSW.setEnabled(true);
-                // checkIn.setCheckInTime(currentTime);
-                checkInLogTV.setText(checkIn.addToLogString(checkIn.getTimeString(true)));
-                // Add method showActivityInCheckInTF()
+                checkInLogTV.setText(CheckInTime.addToLogString(
+                                     CheckInTime.getFineAssTime(true, true)));
             }else{
                 takeBreakSW.setChecked(false);
                 takeBreakSW.setEnabled(false);
-                checkInLogTV.setText(checkIn.addToLogString(checkIn.getTimeString(false)));
-                //checkIn.setCheckOutTime(currentTime);
+                checkInLogTV.setText(CheckInTime.addToLogString(
+                                     CheckInTime.getFineAssTime(true, false)));
             }
-
-            // Add functionality for timestamps
-
         }
     };
 
@@ -66,13 +55,25 @@ public class CheckInActivity extends AppCompatActivity {
     View.OnClickListener takeBreakOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //Note time, use db-affecting method in control, and show in textfield
+            btnChecker = takeBreakSW.isChecked();
+            if(btnChecker){
+                checkInSW.setEnabled(false);
+                checkInLogTV.setText(CheckInTime.addToLogString(
+                                     CheckInTime.getFineAssTime(false, true)));
+            }else{
+                checkInSW.setEnabled(true);
+                checkInLogTV.setText(CheckInTime.addToLogString(
+                                     CheckInTime.getFineAssTime(false, false)));
+            }
         }
     };
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_in);
+
+        checkInLogTV = (TextView) findViewById(R.id.check_in_log_tv);
+        checkInLogTV.setText(CheckInTime.getLogString());
 
         // Connects back button to xml and assigns listener
         openMainBtn = (Button) findViewById(R.id.check_in_btn_to_main);
@@ -89,7 +90,5 @@ public class CheckInActivity extends AppCompatActivity {
         //takeBreakSW.setEnabled(false);
         assert takeBreakSW != null;
         takeBreakSW.setOnClickListener(takeBreakOnClickListener);
-
-        checkInLogTV = (TextView) findViewById(R.id.check_in_log_tv);
     }
 }
