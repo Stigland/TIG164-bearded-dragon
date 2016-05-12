@@ -29,4 +29,8 @@ public class CalendarEntryFunctionality {
         System.out.println(result);
         return result;
     }
+
+    public static void updateCalendarStatuses(){
+
+    }
 }
