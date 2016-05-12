@@ -1,6 +1,7 @@
 package com.example.leand.tig164_beardeddragon.Calendar;
 
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarEntry;
+import com.example.leand.tig164_beardeddragon.Contacts.Contact;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -37,12 +38,14 @@ public class CalendarDataPump {
 
     }
 
-    //private static List <CalendarEntry> fetchFromDB (){
+    private static List <CalendarEntry> fetchFromDB (){
 
-        //List <CalendarEntry> ce = new ArrayList<Contact>();
+        List <CalendarEntry> ce = new ArrayList<CalendarEntry>();
 
-        //return ce;
+        ce.add();
 
-    //}
+        return ce;
+
+    }
 
 }
