@@ -13,8 +13,8 @@ import java.util.Date;
  */
 public class CalendarDataPump {
 
-    public static HashMap<String, List<String>> getData() {
-        HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
+    public static HashMap<String, List<Object>> getData() {
+        HashMap<String, List<Object>> dateInfo = new HashMap<String, List<Object>>();
 
         //List <CalendarEntry> ce = fetchFromDB();
         List <CalendarEntry> ce2 = new ArrayList<CalendarEntry>();
@@ -28,10 +28,12 @@ public class CalendarDataPump {
             cl.add (c.isAvailableShift());
             cl.add (c.isBookedshift());
             cl.add (c.isAbsenceRequest());
+            dateInfo.put("Date", cl);
+
 
         }
 
-        return expandableListDetail;
+        return dateInfo;
 
     }
 
