@@ -37,10 +37,10 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        final SimpleDateFormat formatter = new SimpleDateFormat("MMMM d, yyyy");
         SQLiteDatabase sqLiteDatabase = getBaseContext().openOrCreateDatabase("calendar_entries.db",MODE_PRIVATE, null);
 
         initiateCalendar();
+
 
        // CalendarEntryDatabase.createDB(sqLiteDatabase);
        // testDB(sqLiteDatabase);
@@ -94,6 +94,4 @@ public class CalendarActivity extends AppCompatActivity {
        // HashMap<Date, Drawable> map,
 
     }
-
-
 }
