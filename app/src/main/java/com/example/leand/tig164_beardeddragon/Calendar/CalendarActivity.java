@@ -42,8 +42,8 @@ public class CalendarActivity extends AppCompatActivity {
 
         initiateCalendar();
 
-        CalendarEntryDatabase.createDB(sqLiteDatabase);
-        testDB(sqLiteDatabase);
+       // CalendarEntryDatabase.createDB(sqLiteDatabase);
+       // testDB(sqLiteDatabase);
     }
 
     private void initiateCalendar() {

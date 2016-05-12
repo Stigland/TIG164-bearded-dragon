@@ -10,9 +10,9 @@ public class CalendarEntryDatabase {
     public static void createDB(SQLiteDatabase sqLiteDatabase) {
 
         //Drops existing tables
-        sqLiteDatabase.execSQL("DROP TABLE person");
-        sqLiteDatabase.execSQL("DROP TABLE shift");
-        sqLiteDatabase.execSQL("DROP TABLE day");
+//        sqLiteDatabase.execSQL("DROP TABLE person");
+     //   sqLiteDatabase.execSQL("DROP TABLE shift");
+      //  sqLiteDatabase.execSQL("DROP TABLE day");
 
         //Creates columns in tables
         sqLiteDatabase.execSQL("CREATE TABLE person ( " +

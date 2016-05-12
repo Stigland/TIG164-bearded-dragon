@@ -42,7 +42,11 @@ public class CalendarDataPump {
 
         List <CalendarEntry> ce = new ArrayList<CalendarEntry>();
 
-        ce.add();
+        ce.add(new CalendarEntry("2016-05-11 06:30","2016-05-11 14:30", true, false, false, false ));
+        ce.add(new CalendarEntry("2016-05-12 06:30","2016-05-12 14:30", false, false, true, false ));
+        ce.add(new CalendarEntry("2016-05-13 06:30","2016-05-13 14:30", false, false, true, false ));
+        ce.add(new CalendarEntry("2016-05-12 06:30","2016-05-11 14:30", false, false, true, false ));
+        ce.add(new CalendarEntry("2016-05-12 06:30","2016-05-11 14:30", true, false, false, false ));
 
         return ce;
 

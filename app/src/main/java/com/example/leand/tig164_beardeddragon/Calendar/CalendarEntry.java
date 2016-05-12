@@ -10,14 +10,14 @@ import hirondelle.date4j.DateTime;
  */
 public class CalendarEntry {
 
-    private Date startDate;
-    private Date endDate;
-    private boolean interested;
-    private boolean availableShift; //This variable should be set by employer. For this example it's stored in this class.
-    private boolean bookedShift;
-    private boolean absenceRequest;
+    public String startDate;
+    public String endDate;
+    public boolean interested;
+    public boolean availableShift; //This variable should be set by employer. For this example it's stored in this class.
+    public boolean bookedShift;
+    public boolean absenceRequest;
 
-    private CalendarEntry (Date startDate,Date endDate, boolean interested,
+    public CalendarEntry (String startDate,String endDate, boolean interested,
                            boolean availableShift, boolean bookedshift, boolean absenceRequest) {
         this.startDate = startDate;
         this.endDate = endDate;
@@ -27,19 +27,19 @@ public class CalendarEntry {
         this.absenceRequest = absenceRequest;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
