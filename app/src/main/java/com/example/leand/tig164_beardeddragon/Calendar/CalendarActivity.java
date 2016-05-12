@@ -31,6 +31,7 @@ import hirondelle.date4j.DateTime;
 public class CalendarActivity extends AppCompatActivity {
 
     private Calendar cal = Calendar.getInstance();
+    Date oldDate = new Date();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +66,10 @@ public class CalendarActivity extends AppCompatActivity {
 
             @Override
             public void onSelectDate(Date date, View view) {
-                //ColorDrawable lightBlue = new ColorDrawable(getResources().getColor(R.color.orange));
-                //caldroidFragment.setBackgroundDrawableForDate(lightBlue, date);
-
+                caldroidFragment.clearBackgroundDrawableForDate(oldDate);
+                ColorDrawable selectionBlue = new ColorDrawable(getResources().getColor(R.color.backgroundBlue));
+                caldroidFragment.setBackgroundDrawableForDate(selectionBlue, date);
+                oldDate = date;
 
                 caldroidFragment.refreshView();
             }
