@@ -10,6 +10,7 @@
     tools:context="com.example.leand.tig164_beardeddragon.MainActivity"
     android:background="@color/backgroundBlue">
 
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

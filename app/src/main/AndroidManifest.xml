@@ -15,8 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Calendar.CalendarActivity"></activity>
-        <activity android:name=".Contacts.ContactsActivity"></activity>
+        <activity
+            android:name=".Contacts.ContactsActivity"/>
         <activity android:name=".CheckIn.CheckInActivity"></activity>
     </application>
 

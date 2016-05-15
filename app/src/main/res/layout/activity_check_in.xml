@@ -1,13 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Check in"
-        android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:weightSum="1"
+        android:background="@drawable/stroke_bg" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Schedule log"
+            android:id="@+id/check_in_log_title_tv"
+            android:background="@drawable/stroke_bg" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/check_in_log_sv"
+            android:fillViewport="true" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/check_in_log_tv"
+                android:clickable="false"
+                android:focusable="false"
+                android:singleLine="false" />
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical">
+
+        <Switch
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="Checked in"
+            android:id="@+id/check_in_swBtn_checkIn"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Break"
+            android:id="@+id/check_in_swBtn_break"
+            android:textSize="20dp"
+            android:layout_marginBottom="30dp"
+            android:enabled="false" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/check_in_btn_to_main"
+            android:clickable="true"
+            android:enabled="true"
+            android:layout_gravity="bottom" />
+
+    </LinearLayout>
+
 </LinearLayout>
