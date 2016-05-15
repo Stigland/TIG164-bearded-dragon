@@ -21,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import hirondelle.date4j.DateTime;
 
@@ -32,6 +33,7 @@ public class CalendarActivity extends AppCompatActivity {
 
     private Calendar cal = Calendar.getInstance();
     Date oldDate = new Date();
+    final CaldroidFragment caldroidFragment = new CaldroidFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +42,14 @@ public class CalendarActivity extends AppCompatActivity {
 
         SQLiteDatabase sqLiteDatabase = getBaseContext().openOrCreateDatabase("calendar_entries.db",MODE_PRIVATE, null);
 
-        initiateCalendar();
+        initiateCalendar(caldroidFragment);
 
-
+        updateCalendarStatuses(CalendarDataPump.fetchFromDB());
        // CalendarEntryDatabase.createDB(sqLiteDatabase);
        // testDB(sqLiteDatabase);
     }
 
-    private void initiateCalendar() {
-        final CaldroidFragment caldroidFragment = new CaldroidFragment();
+    private void initiateCalendar(final CaldroidFragment caldroidFragment) {
         Bundle args = new Bundle();
 
         args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
@@ -62,16 +63,18 @@ public class CalendarActivity extends AppCompatActivity {
 
 
 
-        final CaldroidListener listener = new CaldroidListener() {
+         final CaldroidListener listener = new CaldroidListener() {
 
             @Override
             public void onSelectDate(Date date, View view) {
                 caldroidFragment.clearBackgroundDrawableForDate(oldDate);
+                updateCalendarStatuses(CalendarDataPump.fetchFromDB());
                 ColorDrawable selectionBlue = new ColorDrawable(getResources().getColor(R.color.backgroundBlue));
                 caldroidFragment.setBackgroundDrawableForDate(selectionBlue, date);
                 oldDate = date;
 
                 caldroidFragment.refreshView();
+
             }
         };
         caldroidFragment.setCaldroidListener(listener);
@@ -92,8 +95,25 @@ public class CalendarActivity extends AppCompatActivity {
         };
     }
 
-    protected void updateCalendarCells() {
-       // HashMap<Date, Drawable> map,
+    public void updateCalendarStatuses(List<CalendarEntry> ce){
+
+        final ColorDrawable myShiftsGreen = new ColorDrawable(getResources().getColor(R.color.lightGreen));
+        final ColorDrawable interestedYellow = new ColorDrawable(getResources().getColor(R.color.yellow));
+        final ColorDrawable availableBlue = new ColorDrawable(getResources().getColor(R.color.lightBlue));
+        final ColorDrawable absenceOrange = new ColorDrawable(getResources().getColor(R.color.orange));
+
+        for (CalendarEntry c : ce)  {
+
+            if (c.bookedShift) {
+                caldroidFragment.setBackgroundDrawableForDate(myShiftsGreen, CalendarEntryFunctionality.stringToDate(c.startDate));
+            } else if (c.absenceRequest) {
+                caldroidFragment.setBackgroundDrawableForDate(absenceOrange, CalendarEntryFunctionality.stringToDate(c.startDate));
+            } else if (c.availableShift){
+                    caldroidFragment.setBackgroundDrawableForDate(availableBlue, CalendarEntryFunctionality.stringToDate(c.startDate));
+            } else if (c.interested){
+                caldroidFragment.setBackgroundDrawableForDate(interestedYellow, CalendarEntryFunctionality.stringToDate(c.startDate));
+            }
+        }
 
     }
 }

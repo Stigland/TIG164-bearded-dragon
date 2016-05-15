@@ -3,7 +3,13 @@ package com.example.leand.tig164_beardeddragon.Calendar;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by leand on 2016-05-12.
@@ -30,7 +36,5 @@ public class CalendarEntryFunctionality {
         return result;
     }
 
-    public static void updateCalendarStatuses(){
 
-    }
 }
