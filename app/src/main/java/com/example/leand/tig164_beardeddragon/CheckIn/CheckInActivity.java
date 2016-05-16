@@ -73,12 +73,6 @@ public class CheckInActivity extends AppCompatActivity{
         setContentView(R.layout.activity_check_in);
 
         checkInLogTV = (TextView) findViewById(R.id.check_in_log_tv);
-        checkInLogTV.setText(CheckInTime.getLogString());
-
-        // Connects back button to xml and assigns listener
-        openMainBtn = (Button) findViewById(R.id.check_in_btn_to_main);
-        assert openMainBtn != null;
-        openMainBtn.setOnClickListener(backToMainOnClickListener);
 
         // Connects check in switch to xml and assigns listener
         checkInSW = (Switch) findViewById(R.id.check_in_swBtn_checkIn);
@@ -90,5 +84,7 @@ public class CheckInActivity extends AppCompatActivity{
         //takeBreakSW.setEnabled(false);
         assert takeBreakSW != null;
         takeBreakSW.setOnClickListener(takeBreakOnClickListener);
+        checkInLogTV.setText(CheckInTime.getLogString());
     }
 }
+

@@ -4,20 +4,44 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="370dp"
-        android:weightSum="1"
-        android:background="@drawable/stroke_bg" >
+        android:layout_height="300dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Today&apos;s schedule"
+            android:id="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:textSize="45sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Schedule log"
-            android:id="@+id/check_in_log_title_tv"
-            android:background="@drawable/stroke_bg" />
+            android:text="08:00 - 16:00"
+            android:id="@+id/textView8"
+            android:textSize="60sp"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:weightSum="1"
+        android:background="@drawable/stroke_bg">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/check_in_log_title_tv"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -34,40 +58,39 @@
                 android:focusable="false"
                 android:singleLine="false" />
         </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1"
-        android:orientation="vertical">
-
-        <Switch
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:text="Checked in"
-            android:id="@+id/check_in_swBtn_checkIn"
-            android:textSize="20dp"
-            android:layout_marginBottom="10dp" />
+        android:orientation="vertical"
+        android:gravity="bottom">
 
         <Switch
             android:layout_width="match_parent"
+            android:switchMinWidth="360dp"
+            android:thumbTextPadding="40sp"
             android:layout_height="0dp"
-            android:text="Break"
-            android:id="@+id/check_in_swBtn_break"
-            android:textSize="20dp"
-            android:layout_marginBottom="30dp"
-            android:enabled="false" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:id="@+id/check_in_btn_to_main"
-            android:clickable="true"
-            android:enabled="true"
+            android:textOn=" "
+            android:textOff="Not checked in"
+            android:id="@+id/check_in_swBtn_checkIn"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="bottom" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:switchMinWidth="360dp"
+            android:thumbTextPadding="40sp"
+            android:layout_height="0dp"
+            android:textOn="You&apos;re on break"
+            android:textOff="Go on break"
+            android:id="@+id/check_in_swBtn_break"
+            android:textSize="20sp"
+            android:enabled="false"
+            android:layout_gravity="bottom"
+            android:clickable="true" />
 
     </LinearLayout>
 

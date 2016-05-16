@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TIG164_BeardedDragon</string>
+    <string name="checkIn_switch_on">Checked in</string>
+    <string name="checkIn_switch_off">Checked out</string>
+    <string name="take_break_switch_on">On break</string>
+    <string name="take_break_switch_off">Check in to take a break</string>
+
 </resources>
