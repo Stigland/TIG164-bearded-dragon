@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="MENU"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -16,10 +16,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Calendar.CalendarActivity"></activity>
         <activity
+            android:label="CALENDAR"
+            android:name=".Calendar.CalendarActivity"></activity>
+        <activity
+            android:label="CONTACTS"
             android:name=".Contacts.ContactsActivity"/>
-        <activity android:name=".CheckIn.CheckInActivity"></activity>
+        <activity
+            android:label="CHECK IN"
+            android:name=".CheckIn.CheckInActivity"></activity>
     </application>
 
 </manifest>

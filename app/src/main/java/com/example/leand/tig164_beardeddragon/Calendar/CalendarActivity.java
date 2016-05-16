@@ -41,13 +41,10 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        SQLiteDatabase sqLiteDatabase = getBaseContext().openOrCreateDatabase("calendar_entries.db",MODE_PRIVATE, null);
-
+//        getActionBar().setTitle("Calendar");
         initiateCalendar(caldroidFragment);
 
         updateCalendarStatuses(CalendarDataPump.fetchFromDB());
-       // CalendarEntryDatabase.createDB(sqLiteDatabase);
-       // testDB(sqLiteDatabase);
     }
 
     private void initiateCalendar(final CaldroidFragment caldroidFragment) {
