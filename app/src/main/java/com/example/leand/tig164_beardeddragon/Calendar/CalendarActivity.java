@@ -35,6 +35,7 @@ public class CalendarActivity extends AppCompatActivity {
     Date oldDate = new Date();
     final CaldroidFragment caldroidFragment = new CaldroidFragment();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +96,7 @@ public class CalendarActivity extends AppCompatActivity {
         };
     }
 
+    //Updates calendar statuses in calendar based on existing DB records
     public void updateCalendarStatuses(List<CalendarEntry> ce){
 
         final ColorDrawable myShiftsGreen = new ColorDrawable(getResources().getColor(R.color.lightGreen));
@@ -114,6 +116,7 @@ public class CalendarActivity extends AppCompatActivity {
                 caldroidFragment.setBackgroundDrawableForDate(interestedYellow, CalendarEntryFunctionality.stringToDate(c.startDate));
             }
         }
-
     }
+
+
 }
