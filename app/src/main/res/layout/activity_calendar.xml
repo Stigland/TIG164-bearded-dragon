@@ -15,22 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Customize selected date "
-            android:id="@+id/calendar_customize_btn"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_centerHorizontal="true"
-            android:background="@color/darkBlue"
-            android:textColor="#FFFFFF"/>
-        </RelativeLayout>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="MENU"
+        android:label="SCHEMAPP"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -25,6 +25,9 @@
         <activity
             android:label="CHECK IN"
             android:name=".CheckIn.CheckInActivity"></activity>
+        <activity
+            android:name=".Calendar.CalendarPopupActivity"
+            android:theme="@style/AppTheme.PopupTheme"/>
     </application>
 
 </manifest>
