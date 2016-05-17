@@ -40,13 +40,8 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        SQLiteDatabase sqLiteDatabase = getBaseContext().openOrCreateDatabase("calendar_entries.db",MODE_PRIVATE, null);
-
         initiateCalendar(caldroidFragment);
 
-        updateCalendarStatuses(CalendarDataPump.fetchFromDB());
-       // CalendarEntryDatabase.createDB(sqLiteDatabase);
-       // testDB(sqLiteDatabase);
     }
 
     private void initiateCalendar(final CaldroidFragment caldroidFragment) {
@@ -60,6 +55,8 @@ public class CalendarActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.calendar1, caldroidFragment);
         ft.commit();
+
+        updateCalendarStatuses(CalendarDataPump.fetchFromDB());
 
 
 
@@ -80,21 +77,6 @@ public class CalendarActivity extends AppCompatActivity {
         caldroidFragment.setCaldroidListener(listener);
     }
 
-    protected void testDB(SQLiteDatabase sqLiteDatabase) {
-        Cursor query = sqLiteDatabase.rawQuery("select * from shift", null);
-        if(query.moveToFirst()) {
-            do {
-                //cycle through all records
-                int shift_id = query.getInt(0);
-                String start_time = query.getString(1);
-                String end_time = query.getString(2);
-                Toast.makeText(getBaseContext(), "Name= " + shift_id + ", phone= " + start_time + ", email= " + end_time, Toast.LENGTH_LONG).show();
-            } while(query.moveToNext());
-        } else {
-            Toast.makeText(getBaseContext(),"Error retrieving data",Toast.LENGTH_SHORT).show();
-        };
-    }
-
     public void updateCalendarStatuses(List<CalendarEntry> ce){
 
         final ColorDrawable myShiftsGreen = new ColorDrawable(getResources().getColor(R.color.lightGreen));
@@ -109,7 +91,7 @@ public class CalendarActivity extends AppCompatActivity {
             } else if (c.absenceRequest) {
                 caldroidFragment.setBackgroundDrawableForDate(absenceOrange, CalendarEntryFunctionality.stringToDate(c.startDate));
             } else if (c.availableShift){
-                    caldroidFragment.setBackgroundDrawableForDate(availableBlue, CalendarEntryFunctionality.stringToDate(c.startDate));
+                caldroidFragment.setBackgroundDrawableForDate(availableBlue, CalendarEntryFunctionality.stringToDate(c.startDate));
             } else if (c.interested){
                 caldroidFragment.setBackgroundDrawableForDate(interestedYellow, CalendarEntryFunctionality.stringToDate(c.startDate));
             }

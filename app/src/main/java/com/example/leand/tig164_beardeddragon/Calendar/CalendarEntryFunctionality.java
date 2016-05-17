@@ -1,5 +1,10 @@
 package com.example.leand.tig164_beardeddragon.Calendar;
 
+import android.graphics.drawable.ColorDrawable;
+
+import com.example.leand.tig164_beardeddragon.R;
+import com.roomorama.caldroid.CaldroidFragment;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,6 +40,5 @@ public class CalendarEntryFunctionality {
         System.out.println(result);
         return result;
     }
-
 
 }
