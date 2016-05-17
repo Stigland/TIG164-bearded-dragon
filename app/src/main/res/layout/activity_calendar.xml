@@ -1,19 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="403dp"
         android:id="@+id/calendar1">
 
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Calendar"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/interested"
+            android:id="@+id/textView4"
+            android:layout_marginBottom="34dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/imageView3"
+            android:layout_toLeftOf="@+id/imageView3"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/absence_request"
+            android:id="@+id/textView5"
+            android:layout_marginRight="34dp"
+            android:layout_marginEnd="34dp"
+            android:textSize="18dp"
+            android:layout_alignTop="@+id/textView4"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/my_shifts"
+            android:id="@+id/textView6"
+            android:layout_alignTop="@+id/textView7"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_alignRight="@+id/textView4"
+            android:layout_alignEnd="@+id/textView4"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/available_shifts"
+            android:id="@+id/textView7"
+            android:layout_above="@+id/textView5"
+            android:layout_alignLeft="@+id/textView5"
+            android:layout_alignStart="@+id/textView5"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="16dp"
+            android:id="@+id/greenDot"
+            android:src="@drawable/yellow_dot"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_toLeftOf="@+id/textView4"
+            android:layout_toStartOf="@+id/textView4" />
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="16dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/green_dot"
+            android:layout_above="@+id/textView4"
+            android:layout_toLeftOf="@+id/textView4"
+            android:layout_toStartOf="@+id/textView4" />
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="16dp"
+            android:id="@+id/imageView2"
+            android:src="@drawable/blue_dot"
+            android:layout_above="@+id/textView5"
+            android:layout_alignLeft="@+id/imageView3"
+            android:layout_alignStart="@+id/imageView3" />
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="16dp"
+            android:id="@+id/imageView3"
+            android:src="@drawable/orange_dot"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_toLeftOf="@+id/textView5"
+            android:layout_toStartOf="@+id/textView5" />
+
+    </RelativeLayout>
+
 </LinearLayout>

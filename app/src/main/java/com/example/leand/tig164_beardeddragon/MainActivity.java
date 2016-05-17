@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.leand.tig164_beardeddragon.Calendar.CalendarActivity;
+import com.example.leand.tig164_beardeddragon.CheckIn.CheckInActivity;
+import com.example.leand.tig164_beardeddragon.Contacts.ContactsActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button OpenCalendarBtn;
@@ -25,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openCalendarOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent i = new Intent(getBaseContext(), CalendarActivity.class);
-            startActivity(i);
-            finish();
+
+                Intent i = new Intent(getBaseContext(), CalendarActivity.class);
+                startActivity(i);
+
             }
         };
         OpenCalendarBtn.setOnClickListener(openCalendarOnClickListener);
@@ -36,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openContactsOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent i = new Intent(getBaseContext(), ContactsActivity.class);
-            startActivity(i);
-            finish();
+
+                Intent i = new Intent(getBaseContext(), ContactsActivity.class);
+                startActivity(i);
+
             }
         };
         OpenContactsBtn.setOnClickListener(openContactsOnClickListener);
@@ -47,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openCheckInOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent i = new Intent(getBaseContext(), CheckInActivity.class);
-            startActivity(i);
-            finish();
+
+                Intent i = new Intent(getBaseContext(), CheckInActivity.class);
+                startActivity(i);
+
             }
         };
         OpenCheckInBtn.setOnClickListener(openCheckInOnClickListener);
