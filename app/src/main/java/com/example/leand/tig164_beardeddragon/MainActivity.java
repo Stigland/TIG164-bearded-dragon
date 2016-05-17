@@ -29,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openCalendarOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(getBaseContext(), CalendarActivity.class);
                 startActivity(i);
+
             }
         };
         OpenCalendarBtn.setOnClickListener(openCalendarOnClickListener);
@@ -39,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openContactsOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(getBaseContext(), ContactsActivity.class);
                 startActivity(i);
+
             }
         };
         OpenContactsBtn.setOnClickListener(openContactsOnClickListener);
@@ -49,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openCheckInOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(getBaseContext(), CheckInActivity.class);
                 startActivity(i);
+
             }
         };
         OpenCheckInBtn.setOnClickListener(openCheckInOnClickListener);

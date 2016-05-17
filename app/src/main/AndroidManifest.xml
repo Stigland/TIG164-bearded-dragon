@@ -20,6 +20,8 @@
         <activity
             android:name=".Contacts.ContactsActivity"/>
         <activity android:name=".CheckIn.CheckInActivity"></activity>
+        <activity android:name=".CheckIn.CheckedInActivity"></activity>
+        <activity android:name=".CheckIn.CheckedInLogActivity"></activity>
     </application>
 
 </manifest>

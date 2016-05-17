@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Schedule activity log"
+        android:id="@+id/schedule_log_title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:text="New Text"
-        android:id="@+id/textView9"
-        android:layout_margin="40dp" />
-</LinearLayout>
+        android:id="@+id/schedule_log_tv"
+        android:layout_margin="40dp"
+        android:background="@drawable/stroke_bg"/>
+</RelativeLayout>

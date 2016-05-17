@@ -31,6 +31,10 @@ public class CheckInTime {
         logString = "";
     }
 
+    public static void nullifyLogString(){
+        logString = null;
+    }
+
     /*public void setCheckInTime(long currentTime){
         // TODO add code for database editing
     }
