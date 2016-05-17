@@ -4,12 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -48,7 +42,7 @@ import hirondelle.date4j.DateTime;
 public class CalendarActivity extends AppCompatActivity {
 
     private Calendar cal = Calendar.getInstance();
-    final CaldroidFragment caldroidFragment = new CaldroidFragment();
+    public static final CaldroidFragment caldroidFragment = new CaldroidFragment();
     private PopupWindow popupWindow;
     private LayoutInflater layoutInflater;
     private LinearLayout linearLayout;
@@ -60,9 +54,7 @@ public class CalendarActivity extends AppCompatActivity {
     private Button grabShiftBtn;
     private TextView dateTv;
     private TextView statusTv;
-
-    Date oldDate = new Date();
-
+    public static Date oldDate = new Date();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,10 +97,9 @@ public class CalendarActivity extends AppCompatActivity {
                 //initPopup(date);
                 caldroidFragment.refreshView();
 
-                startActivity(new Intent(CalendarActivity.this,CalendarPopupActivity.class));
-
-
-
+                Intent i = new Intent(CalendarActivity.this,CalendarPopupActivity.class);
+                i.putExtra("date", date);
+                startActivity(i);
             }
         };
         caldroidFragment.setCaldroidListener(listener);
@@ -164,113 +155,9 @@ public class CalendarActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
 
-        //set user as available
-        View.OnClickListener setInterestedOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(CalendarActivity.this);
-                        builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("Are you sure your status should be set to 'available'?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
-            }
-        };
-        setInterestedBtn.setOnClickListener(setInterestedOnClickListener);
-
-        //remove users availability
-        View.OnClickListener rmInterestedOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(CalendarActivity.this);
-                        builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("Are you certain your status should be set to 'not available'?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
-            }
-        };
-        rmInterestedBtn.setOnClickListener(rmInterestedOnClickListener);
-
-        //let user request absence
-        View.OnClickListener setAbsenceOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(CalendarActivity.this);
-                        builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("Are you sure you want to request absence?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
-            }
-        };
-        setAbsenceBtn.setOnClickListener(setAbsenceOnClickListener);
-
-        //let user remove absence request
-        View.OnClickListener rmAbsenceOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(CalendarActivity.this);
-                        builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("Are you sure you want to remove your absence request?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
-            }
-        };
-        rmAbsenceBtn.setOnClickListener(rmAbsenceOnClickListener);
-
-        //grab shift, if available
-        View.OnClickListener grabShiftOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(CalendarActivity.this);
-                        builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("There is a shift available. Do you want to grab it??")
-                        .setPositiveButton("Heck Yeah!", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("Nope", null)
-                        .show();
-            }
-        };
-        grabShiftBtn.setOnClickListener(grabShiftOnClickListener);
+    public static Date getOldDate() {
+        return oldDate;
     }
 }

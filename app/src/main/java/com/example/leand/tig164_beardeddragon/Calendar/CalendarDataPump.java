@@ -52,7 +52,7 @@ public class CalendarDataPump {
         ce.add(new CalendarEntry("2016-05-31 06:30","2016-05-11 14:30", true, false, false, false ));
         ce.add(new CalendarEntry("2016-06-01 06:30","2016-05-11 14:30", true, false, false, false ));
         ce.add(new CalendarEntry("2016-06-04 06:30","2016-05-11 14:30", true, false, false, false ));
-        ce.add(new CalendarEntry("2016-06-05 06:30","2016-05-11 14:30", true, false, false, false ));
+        ce.add(new CalendarEntry("2016-06-05 06:30","2016-05-11 14:30", false, false, false, true ));
 
 
 

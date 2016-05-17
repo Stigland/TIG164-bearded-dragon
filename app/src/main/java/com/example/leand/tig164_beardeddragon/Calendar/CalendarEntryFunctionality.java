@@ -16,12 +16,14 @@ import java.util.Map;
  */
 public class CalendarEntryFunctionality {
 
-    static DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd kk:mm");
+    static DateFormat timeFormatter = new SimpleDateFormat("yyyy-MM-dd kk:mm");
+    static DateFormat dayFormatter = new SimpleDateFormat("EEE yyyy-MM-dd");
+    static DateFormat hourFormatter = new SimpleDateFormat("kk:mm");
 
     //takes formatted String ("yyyy-MM-dd kk:mm")
     public static Date stringToDate(String dateString) {
         try {
-            Date result = formatter.parse(dateString);
+            Date result = timeFormatter.parse(dateString);
             return result;
         } catch (ParseException e) {
             e.printStackTrace();
@@ -31,8 +33,23 @@ public class CalendarEntryFunctionality {
 
     //Returns a formatted string ("yyyy-MM-dd kk:mm")
     public static String dateToString(Date date) {
-        String result = formatter.format(date);
+        String result = timeFormatter.format(date);
         System.out.println(result);
         return result;
     }
+
+    //Returns a formatted string ("yyyy-MM-dd kk:mm")
+    public static String dateToDayString(Date date) {
+        String result = dayFormatter.format(date);
+        System.out.println(result);
+        return result;
+    }
+
+    //Returns a formatted string ("yyyy-MM-dd kk:mm")
+    public static String dateTotimeString(Date date) {
+        String result = hourFormatter.format(date);
+        System.out.println(result);
+        return result;
+    }
+
 }
