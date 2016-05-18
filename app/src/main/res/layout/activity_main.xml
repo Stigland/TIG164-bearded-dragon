@@ -30,7 +30,7 @@
         android:layout_below="@+id/menu_OpenCheckIn_Btn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="78dp"
-        android:background="@drawable/calendar_icon"
+        android:background="@color/darkBlue"
         android:textColor="@color/yellow"/>
 
     <Button
