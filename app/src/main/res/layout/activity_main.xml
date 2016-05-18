@@ -28,9 +28,10 @@
         android:background="@drawable/contacts_icon_black"
         android:textColor="#000000"
         android:textSize="25sp"
-        android:layout_above="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/menu_OpenCheckIn_Btn"
+        android:layout_alignStart="@+id/menu_OpenCheckIn_Btn"
+        android:layout_marginTop="36dp" />
 
     <Button
         android:layout_width="100dp"
@@ -39,10 +40,10 @@
         android:background="@drawable/bell_icon_black"
         android:textColor="#000000"
         android:textSize="25sp"
-        android:layout_marginTop="26dp"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="34dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,12 +58,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="CONTACTS"
+        android:text="COLLEAGUES"
         android:id="@+id/textView3"
-        android:layout_marginBottom="26dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_below="@+id/menu_OpenContacts_Btn"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"

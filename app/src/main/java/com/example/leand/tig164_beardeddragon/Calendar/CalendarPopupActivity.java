@@ -198,7 +198,6 @@ public class CalendarPopupActivity extends Activity {
                     rmInterestedBtn.setVisibility(View.VISIBLE);
                 } else if (c.availableShift) {
                     grabShiftBtn.setVisibility(View.VISIBLE);
-                    setInterestedBtn.setVisibility(View.VISIBLE);
                 } else if (c.absenceRequest) {
                     rmAbsenceBtn.setVisibility(View.VISIBLE);
                 } else if (c.bookedShift) {
