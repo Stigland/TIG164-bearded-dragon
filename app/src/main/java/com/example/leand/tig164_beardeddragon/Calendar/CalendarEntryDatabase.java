@@ -49,14 +49,4 @@ public class CalendarEntryDatabase {
             }
         }
     }
-
-    public static void getDB() {
-        Cursor query = sql.rawQuery("select * from shifts", null);
-
-        if(query.moveToFirst()) {
-            do {
-
-            } while (query.moveToNext());
-        }
-    }
 }

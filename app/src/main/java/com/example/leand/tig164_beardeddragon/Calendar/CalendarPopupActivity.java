@@ -72,6 +72,7 @@ public class CalendarPopupActivity extends Activity {
                         public void onClick(DialogInterface dialog, int which) {
                             if(!workingCe.interested) {
                                 workingCe.setInterested(true);
+                                //CalendarActivity.updateCalendar();
                                 Toast.makeText(getBaseContext(),"Status updated to 'available'",Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(getBaseContext(),"Something went wrong",Toast.LENGTH_LONG).show();
@@ -100,6 +101,7 @@ public class CalendarPopupActivity extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getBaseContext(),"Status updated to 'not available'",Toast.LENGTH_SHORT).show();
+                           // CalendarActivity.updateCalendar();
                         }
                     })
                     .setNegativeButton("No", null)
@@ -121,6 +123,7 @@ public class CalendarPopupActivity extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getBaseContext(),"Absence request has been registered",Toast.LENGTH_SHORT).show();
+                            //CalendarActivity.updateCalendar();
                         }
                     })
                     .setNegativeButton("No", null)
@@ -142,6 +145,7 @@ public class CalendarPopupActivity extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getBaseContext(),"Absence request has been removed",Toast.LENGTH_SHORT).show();
+                            //CalendarActivity.updateCalendar();
                         }
                     })
                     .setNegativeButton("No", null)
@@ -163,6 +167,7 @@ public class CalendarPopupActivity extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getBaseContext(),"The shift is now yours",Toast.LENGTH_SHORT).show();
+                            //CalendarActivity.updateCalendar();
                         }
                     })
                     .setNegativeButton("Nope", null)

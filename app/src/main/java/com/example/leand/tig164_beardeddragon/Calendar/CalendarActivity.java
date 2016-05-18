@@ -56,14 +56,14 @@ public class CalendarActivity extends AppCompatActivity {
     private TextView dateTv;
     private TextView statusTv;
     public static Date oldDate = new Date();
+    public static SQLiteDatabase sql;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-
-        SQLiteDatabase sql = getBaseContext().openOrCreateDatabase("test1.db",MODE_PRIVATE, null);
+        sql = getBaseContext().openOrCreateDatabase("test1.db",MODE_PRIVATE, null);
         CalendarEntryDatabase.createDB(sql);
 
         linearLayout = (LinearLayout) findViewById(R.id.calendar_main_layout);
@@ -71,7 +71,8 @@ public class CalendarActivity extends AppCompatActivity {
         initiateCalendar(caldroidFragment);
 
 
-        updateCalendarStatuses(CalendarDataPump.fetchFromDB());
+        //updateCalendarStatuses(CalendarDataPump.fetchFromDB());
+        updateCalendarStatuses(CalendarDataPump.getDB());
 
 
         initiateCalendar(caldroidFragment);
@@ -90,16 +91,14 @@ public class CalendarActivity extends AppCompatActivity {
         ft.replace(R.id.calendar1, caldroidFragment);
         ft.commit();
 
-        updateCalendarStatuses(CalendarDataPump.fetchFromDB());
-
-
+        //updateCalendarStatuses(CalendarDataPump.fetchFromDB());
 
          final CaldroidListener listener = new CaldroidListener() {
 
             @Override
             public void onSelectDate(Date date, View view) {
                 caldroidFragment.clearBackgroundDrawableForDate(oldDate);
-                updateCalendarStatuses(CalendarDataPump.fetchFromDB());
+                updateCalendarStatuses(CalendarDataPump.getDB());
                 ColorDrawable selectionBlue = new ColorDrawable(getResources().getColor(R.color.backgroundBlue));
                 caldroidFragment.setBackgroundDrawableForDate(selectionBlue, date);
                 oldDate = date;
@@ -166,6 +165,15 @@ public class CalendarActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public static void updateField(CalendarEntry ce) {
+        caldroidFragment.refreshView();
+
+    }
+
+    public static SQLiteDatabase getSql() {
+        return sql;
     }
 
     public static Date getOldDate() {
