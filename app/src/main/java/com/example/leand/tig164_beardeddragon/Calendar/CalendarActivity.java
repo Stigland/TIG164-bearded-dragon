@@ -62,13 +62,10 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-<<<<<<< HEAD
+
         SQLiteDatabase sql = getBaseContext().openOrCreateDatabase("test1.db",MODE_PRIVATE, null);
         CalendarEntryDatabase.createDB(sql);
 
-=======
-<<<<<<< HEAD
->>>>>>> 07be9e66eac7a2731c22230df6da6e5a63e7fac0
         linearLayout = (LinearLayout) findViewById(R.id.calendar_main_layout);
 
         initiateCalendar(caldroidFragment);
@@ -76,10 +73,9 @@ public class CalendarActivity extends AppCompatActivity {
 
         updateCalendarStatuses(CalendarDataPump.fetchFromDB());
 
-=======
+
         initiateCalendar(caldroidFragment);
 
->>>>>>> master
     }
 
     private void initiateCalendar(final CaldroidFragment caldroidFragment) {
@@ -120,10 +116,7 @@ public class CalendarActivity extends AppCompatActivity {
         caldroidFragment.setCaldroidListener(listener);
     }
 
-<<<<<<< HEAD
     //Updates calendar statuses in calendar based on existing DB records
-=======
->>>>>>> master
     public void updateCalendarStatuses(List<CalendarEntry> ce){
 
         final ColorDrawable myShiftsGreen = new ColorDrawable(getResources().getColor(R.color.lightGreen));

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">TIG164_BeardedDragon</string>
-<<<<<<< HEAD
     <string name="calendar">Calendar</string>
     <string name="Check_in">Check In</string>
     <string name="Contacts">Contacts</string>
@@ -8,11 +7,9 @@
     <string name="my_shifts">My shifts</string>
     <string name="available_shifts">Available shifts</string>
     <string name="absence_request">Absence request</string>
-=======
     <string name="checkIn_switch_on">Checked in</string>
     <string name="checkIn_switch_off">Checked out</string>
     <string name="take_break_switch_on">On break</string>
     <string name="take_break_switch_off">Check in to take a break</string>
 
->>>>>>> master
 </resources>

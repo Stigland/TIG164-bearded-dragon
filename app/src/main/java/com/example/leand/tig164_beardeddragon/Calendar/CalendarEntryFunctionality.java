@@ -43,7 +43,6 @@ public class CalendarEntryFunctionality {
         return result;
     }
 
-<<<<<<< HEAD
     //Returns a formatted string ("yyyy-MM-dd kk:mm")
     public static String dateToDayString(Date date) {
         String result = dayFormatter.format(date);
@@ -57,7 +56,4 @@ public class CalendarEntryFunctionality {
         System.out.println(result);
         return result;
     }
-
-=======
->>>>>>> master
 }
