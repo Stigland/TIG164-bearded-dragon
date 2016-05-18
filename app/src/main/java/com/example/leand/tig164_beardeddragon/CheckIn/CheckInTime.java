@@ -1,45 +1,82 @@
 package com.example.leand.tig164_beardeddragon.CheckIn;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.*;
-import android.content.Intent;
-import android.widget.Button;
-import android.widget.Switch;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 /**
  * Created by anton on 2016-05-05.
  */
 
-public class CheckInTime{
+public class CheckInTime {
 
-    public String logString;
+    private static String logString;
+    private static Calendar rightNow;
 
-    public CheckInTime(String s){
-        logString = s;
+    public static String addToLogString(String s) {
+        if (logString == null) {
+            logString = "";
+        }
+        return logString = logString + s;
     }
 
-    public String addToLogString(String s){
-        return logString + s;
+    public static String getLogString(){
+        if (logString == null) {
+            logString = "";
+        }
+        return logString;
     }
 
-    public void setCheckInTime(long currentTime){
+    public static void clearLogString(){
+        logString = "";
+    }
 
+    public static void nullifyLogString(){ logString = null; }
+
+    public static void getPassHours(){
+
+    }
+
+    /*public void setCheckInTime(long currentTime){
+        // TODO add code for database editing
     }
 
     public void setCheckOutTime(long currentTime){
+        // TODO add code for database editing
+    }*/
 
-    }
+    public static String getFineAssTime(boolean checkOrBreak, boolean inOrOut){
 
-    public String getTimeString(boolean inOrOut) {
-        long currentTime = System.currentTimeMillis();
-        String parsedTimeStamp = String.valueOf(currentTime);
-        String firstTimeStamp = parsedTimeStamp.substring(0, 2);
-        String secondTimeStamp = parsedTimeStamp.substring(2, 4);
-        if(inOrOut) {
-            return firstTimeStamp + ":" + secondTimeStamp + ": Checked in\n";
+        rightNow = new GregorianCalendar(TimeZone.getDefault());
+        rightNow.setTimeInMillis(System.currentTimeMillis());
+
+        int[] rawTime     = {rightNow.get(Calendar.HOUR), rightNow.get(Calendar.MINUTE),
+                            rightNow.get(Calendar.SECOND)};
+        String[] fineTime = new String[3];
+        int s = 0;
+
+        for(int i: rawTime){
+            if (i < 10){
+                fineTime[s] = "0" + i + ":";
+                s++;
+            }else{
+                fineTime[s] = i + ":";
+                s++;
+            }
+        }
+
+        if(checkOrBreak){
+            if(inOrOut){
+                return fineTime[0] + fineTime[1] + fineTime[2] + " Checked in\n";
+            }else{
+                return fineTime[0] + fineTime[1] + fineTime[2] + " Checked out\n";
+            }
         }else{
-            return firstTimeStamp + ":" + secondTimeStamp + ": Checked out\n";
+            if(inOrOut){
+                return fineTime[0] + fineTime[1] + fineTime[2] + " Took break\n";
+            }else{
+                return fineTime[0] + fineTime[1] + fineTime[2] + " Back from break\n";
+            }
         }
     }
 }

@@ -2,21 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:id="@+id/calendar_main_layout">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="374dp"
         android:id="@+id/calendar1">
 
     </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Calendar"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,49 +19,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Intresseanmälan"
-            android:id="@+id/textView4"
+            android:text="@string/interested"
+            android:id="@+id/interestedText"
             android:layout_marginBottom="34dp"
             android:layout_alignParentBottom="true"
-            android:layout_toStartOf="@+id/imageView3"
-            android:layout_toLeftOf="@+id/imageView3"
+            android:layout_toStartOf="@+id/orangeDot"
+            android:layout_toLeftOf="@+id/orangeDot"
             android:textSize="18dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Frånvaroanmälan"
-            android:id="@+id/textView5"
-            android:layout_marginRight="22dp"
-            android:layout_marginEnd="22dp"
-            android:layout_alignTop="@+id/textView4"
+            android:text="@string/absence_request"
+            android:id="@+id/absenceText"
+            android:layout_marginRight="34dp"
+            android:layout_marginEnd="34dp"
+            android:textSize="18dp"
+            android:layout_alignTop="@+id/interestedText"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/my_shifts"
+            android:id="@+id/myShiftsText"
+            android:layout_alignTop="@+id/availableText"
+            android:layout_alignLeft="@+id/interestedText"
+            android:layout_alignStart="@+id/interestedText"
+            android:layout_alignRight="@+id/interestedText"
+            android:layout_alignEnd="@+id/interestedText"
             android:textSize="18dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Mina pass"
-            android:id="@+id/textView6"
-            android:layout_alignTop="@+id/textView7"
-            android:layout_alignLeft="@+id/textView4"
-            android:layout_alignStart="@+id/textView4"
-            android:layout_alignRight="@+id/textView4"
-            android:layout_alignEnd="@+id/textView4"
-            android:textSize="18dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Lediga Pass"
-            android:id="@+id/textView7"
-            android:layout_above="@+id/textView5"
-            android:layout_alignLeft="@+id/textView5"
-            android:layout_alignStart="@+id/textView5"
+            android:text="@string/available_shifts"
+            android:id="@+id/availableText"
+            android:layout_above="@+id/absenceText"
+            android:layout_alignLeft="@+id/absenceText"
+            android:layout_alignStart="@+id/absenceText"
             android:textSize="18dp" />
 
         <ImageView
@@ -76,36 +69,36 @@
             android:layout_height="16dp"
             android:id="@+id/greenDot"
             android:src="@drawable/yellow_dot"
-            android:layout_below="@+id/textView6"
-            android:layout_toLeftOf="@+id/textView4"
-            android:layout_toStartOf="@+id/textView4" />
+            android:layout_alignBottom="@+id/interestedText"
+            android:layout_toLeftOf="@+id/interestedText"
+            android:layout_toStartOf="@+id/interestedText" />
 
         <ImageView
             android:layout_width="23dp"
             android:layout_height="16dp"
-            android:id="@+id/imageView"
+            android:id="@+id/yellowDot"
             android:src="@drawable/green_dot"
-            android:layout_alignTop="@+id/textView6"
-            android:layout_toLeftOf="@+id/textView6"
-            android:layout_toStartOf="@+id/textView6" />
+            android:layout_above="@+id/interestedText"
+            android:layout_toLeftOf="@+id/interestedText"
+            android:layout_toStartOf="@+id/interestedText" />
 
         <ImageView
             android:layout_width="23dp"
             android:layout_height="16dp"
-            android:id="@+id/imageView2"
+            android:id="@+id/blueDot"
             android:src="@drawable/blue_dot"
-            android:layout_alignTop="@+id/textView7"
-            android:layout_toLeftOf="@+id/textView7"
-            android:layout_toStartOf="@+id/textView7" />
+            android:layout_above="@+id/absenceText"
+            android:layout_alignLeft="@+id/orangeDot"
+            android:layout_alignStart="@+id/orangeDot" />
 
         <ImageView
             android:layout_width="23dp"
             android:layout_height="16dp"
-            android:id="@+id/imageView3"
+            android:id="@+id/orangeDot"
             android:src="@drawable/orange_dot"
-            android:layout_alignTop="@+id/textView5"
-            android:layout_toLeftOf="@+id/textView5"
-            android:layout_toStartOf="@+id/textView5" />
+            android:layout_alignBottom="@+id/absenceText"
+            android:layout_toLeftOf="@+id/absenceText"
+            android:layout_toStartOf="@+id/absenceText" />
 
     </RelativeLayout>
 

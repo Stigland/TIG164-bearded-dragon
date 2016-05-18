@@ -4,9 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="darkBlue">#004E66</color>
-    <color name="lightBlue">#e1eef6</color>
+    <color name="backgroundBlue">#e1eef6</color>
     <color name="orange">#FF5F2E</color>
-    <color name="yellow">#fCEE32</color>
-
+    <color name="yellow">#fcbe32</color>
+    <color name="lightBlue">#08B9F1</color>
+    <color name="lightGreen">#75D701</color>
+    <color name="transparent">#40000000</color>
 
 </resources>

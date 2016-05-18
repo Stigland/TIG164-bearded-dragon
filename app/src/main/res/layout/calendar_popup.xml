@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/popup_layout"
+    android:background="#cd4340">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/calendar_popup_date_tv"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/calendar_popup_status_tv"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Register availability"
+        android:id="@+id/calendar_popup_set_interested_btn"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Remove availability"
+        android:id="@+id/calendar_popup_rm_interested_btn"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Request absence"
+        android:id="@+id/calendar_popup_set_absence_btn"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Remove absence request"
+        android:id="@+id/calendar_popup_rm_absence_btn"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Grab available shift"
+        android:id="@+id/calendar_popup_grab_shift_btn"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
