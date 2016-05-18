@@ -61,12 +61,17 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
+<<<<<<< HEAD
         linearLayout = (LinearLayout) findViewById(R.id.calendar_main_layout);
 
         initiateCalendar(caldroidFragment);
 
         updateCalendarStatuses(CalendarDataPump.fetchFromDB());
 
+=======
+        initiateCalendar(caldroidFragment);
+
+>>>>>>> master
     }
 
     private void initiateCalendar(final CaldroidFragment caldroidFragment) {
@@ -80,6 +85,8 @@ public class CalendarActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.calendar1, caldroidFragment);
         ft.commit();
+
+        updateCalendarStatuses(CalendarDataPump.fetchFromDB());
 
 
 
@@ -105,7 +112,10 @@ public class CalendarActivity extends AppCompatActivity {
         caldroidFragment.setCaldroidListener(listener);
     }
 
+<<<<<<< HEAD
     //Updates calendar statuses in calendar based on existing DB records
+=======
+>>>>>>> master
     public void updateCalendarStatuses(List<CalendarEntry> ce){
 
         final ColorDrawable myShiftsGreen = new ColorDrawable(getResources().getColor(R.color.lightGreen));
@@ -120,7 +130,7 @@ public class CalendarActivity extends AppCompatActivity {
             } else if (c.absenceRequest) {
                 caldroidFragment.setBackgroundDrawableForDate(absenceOrange, CalendarEntryFunctionality.stringToDate(c.startDate));
             } else if (c.availableShift){
-                    caldroidFragment.setBackgroundDrawableForDate(availableBlue, CalendarEntryFunctionality.stringToDate(c.startDate));
+                caldroidFragment.setBackgroundDrawableForDate(availableBlue, CalendarEntryFunctionality.stringToDate(c.startDate));
             } else if (c.interested){
                 caldroidFragment.setBackgroundDrawableForDate(interestedYellow, CalendarEntryFunctionality.stringToDate(c.startDate));
             }

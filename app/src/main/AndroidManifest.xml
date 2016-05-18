@@ -22,12 +22,18 @@
         <activity
             android:label="CONTACTS"
             android:name=".Contacts.ContactsActivity"/>
+<<<<<<< HEAD
         <activity
             android:label="CHECK IN"
             android:name=".CheckIn.CheckInActivity"></activity>
         <activity
             android:name=".Calendar.CalendarPopupActivity"
             android:theme="@style/AppTheme.PopupTheme"/>
+=======
+        <activity android:name=".CheckIn.CheckInActivity"></activity>
+        <activity android:name=".CheckIn.CheckedInActivity"></activity>
+        <activity android:name=".CheckIn.CheckedInLogActivity"></activity>
+>>>>>>> master
     </application>
 
 </manifest>
