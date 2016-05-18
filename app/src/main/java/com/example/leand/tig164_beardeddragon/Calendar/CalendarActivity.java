@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -61,9 +62,13 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
+        SQLiteDatabase sql = getBaseContext().openOrCreateDatabase("test1.db",MODE_PRIVATE, null);
+        CalendarEntryDatabase.createDB(sql);
+
         linearLayout = (LinearLayout) findViewById(R.id.calendar_main_layout);
 
         initiateCalendar(caldroidFragment);
+
 
         updateCalendarStatuses(CalendarDataPump.fetchFromDB());
 
