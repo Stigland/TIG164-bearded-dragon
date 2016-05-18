@@ -34,7 +34,7 @@ public class ContactsActivity extends AppCompatActivity {
             @Override
             public void onGroupExpand(int groupPosition) {
                 Toast.makeText(getApplicationContext(),
-                        expandableListTitle.get(groupPosition) + " List Expanded.",
+                        expandableListTitle.get(groupPosition),
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -44,7 +44,7 @@ public class ContactsActivity extends AppCompatActivity {
             @Override
             public void onGroupCollapse(int groupPosition) {
                 Toast.makeText(getApplicationContext(),
-                        expandableListTitle.get(groupPosition) + " List Collapsed.",
+                        expandableListTitle.get(groupPosition),
                         Toast.LENGTH_SHORT).show();
 
             }
@@ -57,7 +57,6 @@ public class ContactsActivity extends AppCompatActivity {
                 Toast.makeText(
                         getApplicationContext(),
                         expandableListTitle.get(groupPosition)
-                                + " -> "
                                 + expandableListDetail.get(
                                 expandableListTitle.get(groupPosition)).get(
                                 childPosition), Toast.LENGTH_SHORT
