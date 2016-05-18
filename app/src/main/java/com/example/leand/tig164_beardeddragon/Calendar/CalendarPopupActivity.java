@@ -51,7 +51,7 @@ public class CalendarPopupActivity extends Activity {
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-        getWindow().setLayout((int)(width*.5), (int)(height*.5));
+        getWindow().setLayout((int)(width*.5), (int)(width*.34));
 
         //Basic initialization of popup
         dateTv.setText(stringDate);
@@ -64,23 +64,24 @@ public class CalendarPopupActivity extends Activity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(CalendarPopupActivity.this);
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("Are you sure your status should be set to 'available'?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if(!workingCe.interested) {
-                                    workingCe.setInterested(true);
-                                } else {
-                                    Toast.makeText(getBaseContext(),"Something went wrong",Toast.LENGTH_LONG).show();
-                                }
-                                CalendarActivity.caldroidFragment.refreshView();
+                    .setTitle("")
+                    .setMessage("Are you sure your status should be set to 'available'?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if(!workingCe.interested) {
+                                workingCe.setInterested(true);
+                                Toast.makeText(getBaseContext(),"Status updated to 'available'",Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getBaseContext(),"Something went wrong",Toast.LENGTH_LONG).show();
                             }
+                            CalendarActivity.caldroidFragment.refreshView();
+                        }
 
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
             }
         };
         setInterestedBtn.setOnClickListener(setInterestedOnClickListener);
@@ -92,17 +93,17 @@ public class CalendarPopupActivity extends Activity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(CalendarPopupActivity.this);
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("Are you certain your status should be set to 'not available'?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
+                    .setTitle("")
+                    .setMessage("Are you certain your status should be set to 'not available'?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(getBaseContext(),"Status updated to 'not available'",Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
             }
         };
         rmInterestedBtn.setOnClickListener(rmInterestedOnClickListener);
@@ -113,17 +114,17 @@ public class CalendarPopupActivity extends Activity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(CalendarPopupActivity.this);
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("Are you sure you want to request absence?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
+                    .setTitle("")
+                    .setMessage("Are you sure you want to request absence?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(getBaseContext(),"Absence request has been registered",Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
             }
         };
         setAbsenceBtn.setOnClickListener(setAbsenceOnClickListener);
@@ -134,17 +135,17 @@ public class CalendarPopupActivity extends Activity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(CalendarPopupActivity.this);
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("Are you sure you want to remove your absence request?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
+                    .setTitle("")
+                    .setMessage("Are you sure you want to remove your absence request?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(getBaseContext(),"Absence request has been removed",Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
             }
         };
         rmAbsenceBtn.setOnClickListener(rmAbsenceOnClickListener);
@@ -155,17 +156,17 @@ public class CalendarPopupActivity extends Activity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(CalendarPopupActivity.this);
                 builder.setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("")
-                        .setMessage("There is a shift available. Do you want to grab it?")
-                        .setPositiveButton("Heck Yeah!", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("Nope", null)
-                        .show();
+                    .setTitle("")
+                    .setMessage("There is a shift available. Do you want to grab it?")
+                    .setPositiveButton("Heck Yeah!", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Toast.makeText(getBaseContext(),"The shift is now yours",Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setNegativeButton("Nope", null)
+                    .show();
             }
         };
         grabShiftBtn.setOnClickListener(grabShiftOnClickListener);

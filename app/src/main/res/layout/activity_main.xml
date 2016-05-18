@@ -12,35 +12,36 @@
 
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kalender"
+        android:text="Calendar"
         android:id="@+id/menu_OpenCalendar_Btn"
         android:layout_marginBottom="60dp"
         android:layout_above="@+id/menu_OpenCheckIn_Btn"
         android:layout_centerHorizontal="true"
-        android:background="@color/orange"
-        android:textColor="@color/darkBlue"/>
+        android:background="@color/darkBlue"
+        android:textColor="@color/yellow"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kontakter"
+        android:text="Contacts"
         android:id="@+id/menu_OpenContacts_Btn"
         android:layout_below="@+id/menu_OpenCheckIn_Btn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="78dp"
-        android:background="@color/orange"
-        android:textColor="@color/darkBlue"/>
+        android:background="@color/darkBlue"
+        android:textColor="@color/yellow"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Instämpling"
+        android:text="Check in"
         android:id="@+id/menu_OpenCheckIn_Btn"
         android:layout_centerVertical="true"
-        android:background="@color/orange"
+        android:background="@color/darkBlue"
         android:layout_alignRight="@+id/menu_OpenCalendar_Btn"
         android:layout_alignEnd="@+id/menu_OpenCalendar_Btn"
-        android:textColor="@color/darkBlue"/>
+        android:textColor="@color/yellow"/>
+
 </RelativeLayout>

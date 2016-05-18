@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/popup_layout"
-    android:background="#cd4340">
+    android:background="@color/darkBlue">
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,47 +11,70 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/calendar_popup_date_tv"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:typeface="normal"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/calendar_popup_status_tv"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:typeface="normal" />
 
     <Button
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register availability"
+        android:text="REGISTER AVAILABILITY"
         android:id="@+id/calendar_popup_set_interested_btn"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:typeface="normal"
+        android:background="#80ffffff"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
 
     <Button
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Remove availability"
+        android:text="REMOVE AVAILABILITY"
         android:id="@+id/calendar_popup_rm_interested_btn"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:typeface="normal"
+        android:background="#80ffffff"/>
 
     <Button
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Request absence"
+        android:text="REQUEST ABSENCE"
         android:id="@+id/calendar_popup_set_absence_btn"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:typeface="normal"
+        android:background="#80ffffff"/>
 
     <Button
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Remove absence request"
+        android:text="REMOVE ABSENCE REQUEST"
         android:id="@+id/calendar_popup_rm_absence_btn"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:typeface="normal"
+        android:background="#80ffffff"/>
 
     <Button
-        android:layout_width="130dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Grab available shift"
+        android:text="GRAB AVAILABLE SHIFT"
         android:id="@+id/calendar_popup_grab_shift_btn"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:typeface="normal"
+        android:background="#80ffffff"/>
 </LinearLayout>
