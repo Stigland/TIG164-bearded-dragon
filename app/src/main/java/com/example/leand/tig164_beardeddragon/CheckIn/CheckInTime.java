@@ -31,8 +31,10 @@ public class CheckInTime {
         logString = "";
     }
 
-    public static void nullifyLogString(){
-        logString = null;
+    public static void nullifyLogString(){ logString = null; }
+
+    public static void getPassHours(){
+
     }
 
     /*public void setCheckInTime(long currentTime){

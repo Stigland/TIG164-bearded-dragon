@@ -5,8 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.example.leand.tig164_beardeddragon.MainActivity;
 import com.example.leand.tig164_beardeddragon.R;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by anton on 2016-05-03.
@@ -15,6 +19,7 @@ public class CheckInActivity extends AppCompatActivity{
 
     private Button openMainBtn;
     private Button checkInBtn;
+    private TextView workPassTimes;
     //private Switch takeBreakSW;
     //private boolean btnChecker;
     //private TextView checkInLogTV;

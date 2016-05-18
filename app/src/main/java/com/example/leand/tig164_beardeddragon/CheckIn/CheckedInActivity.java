@@ -17,16 +17,18 @@ public class CheckedInActivity extends AppCompatActivity{
     private Button ViewLogBtn;
     private Button checkOutBtn;
     private TextView checkedInTitle;
+    private boolean onBreak;
 
     View.OnClickListener takeBreakOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
             if(checkedInTitle.getText() == "You are on a break!") {
-                checkedInTitle.setText("Welcome back to work");
+                checkedInTitle.setText("Welcome back to work!");
                 CheckInTime.addToLogString(CheckInTime.getFineAssTime(false, false));
-
+                onBreak = false;
             }else{
+                onBreak = true;
                 checkedInTitle.setText("You are on a break!");
                 CheckInTime.addToLogString(CheckInTime.getFineAssTime(false, true));
             }
@@ -57,6 +59,10 @@ public class CheckedInActivity extends AppCompatActivity{
         setContentView(R.layout.activity_checked_in);
 
         checkedInTitle = (TextView) findViewById(R.id.checked_in_title);
+
+        if(!onBreak) {
+            checkedInTitle.setText("You are checked in and ready to work!");
+        }
 
         // Connects check in switch to xml and assigns listener
         takeBreakBtn = (Button) findViewById(R.id.take_break_btn);
