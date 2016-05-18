@@ -50,7 +50,7 @@ public class CheckedInActivity extends AppCompatActivity{
 
             Intent i = new Intent(getBaseContext(), CheckedInLogActivity.class);
             startActivity(i);
-            finish();
+            //finish();
         }
     };
 
