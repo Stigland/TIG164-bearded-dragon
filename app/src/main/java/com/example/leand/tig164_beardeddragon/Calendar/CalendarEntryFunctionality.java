@@ -43,14 +43,14 @@ public class CalendarEntryFunctionality {
         return result;
     }
 
-    //Returns a formatted string ("yyyy-MM-dd kk:mm")
+    //Returns a formatted string ("yyyy-MM-dd")
     public static String dateToDayString(Date date) {
         String result = dayFormatter.format(date);
         System.out.println(result);
         return result;
     }
 
-    //Returns a formatted string ("yyyy-MM-dd kk:mm")
+    //Returns a formatted string ("kk:mm")
     public static String dateTotimeString(Date date) {
         String result = hourFormatter.format(date);
         System.out.println(result);

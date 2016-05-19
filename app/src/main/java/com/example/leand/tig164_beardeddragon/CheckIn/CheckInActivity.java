@@ -17,9 +17,8 @@ import org.w3c.dom.Text;
  */
 public class CheckInActivity extends AppCompatActivity{
 
-    private Button openMainBtn;
     private Button checkInBtn;
-    private TextView workPassTimes;
+    private TextView workPassTimeTV;
     public static CheckInSession currentUser;
 
     public void onBackPressed(){
@@ -48,7 +47,6 @@ public class CheckInActivity extends AppCompatActivity{
         }else if(CheckedInActivity.currentUser != null){
             currentUser = new CheckInSession(CheckedInActivity.currentUser);
         }
-
 
         // Connects check in switch to xml and assigns listener
         checkInBtn = (Button) findViewById(R.id.check_in_btn);
