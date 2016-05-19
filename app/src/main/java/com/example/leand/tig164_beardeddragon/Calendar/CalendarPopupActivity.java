@@ -213,8 +213,9 @@ public class CalendarPopupActivity extends Activity {
                 } else if (c.bookedShift) {
                     setAbsenceBtn.setVisibility(View.VISIBLE);
                     statusTv.setVisibility(View.VISIBLE);
-                    statusTv.setText("Start: " + CalendarEntryFunctionality.dateTotimeString(CalendarEntryFunctionality.stringToDate(c.startDate))
-                                     + "\nEnd:  " + CalendarEntryFunctionality.dateTotimeString(CalendarEntryFunctionality.stringToDate(c.endDate)));
+                    statusTv.setText("Start: " + cDayString + "\nEnd:  " +
+                                     CalendarEntryFunctionality.dateTotimeString(
+                                     CalendarEntryFunctionality.stringToDate(c.endDate)));
                 } else {
                     counter--;
                 }

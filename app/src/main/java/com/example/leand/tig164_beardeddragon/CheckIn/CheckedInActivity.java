@@ -33,14 +33,16 @@ public class CheckedInActivity extends AppCompatActivity{
     View.OnClickListener takeBreakOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if(currentUser.onBreak) {
-                currentUser.stopBreak();
-                takeBreakBtn.setText(R.string.end_break_btn);
-                gotOffFromBreak = true;
-            }else{
+            if(!currentUser.onBreak) {
                 currentUser.takeBreak();
                 takeBreakBtn.setText(R.string.start_break_btn);
                 gotOffFromBreak = false;
+                setCheckedInTitle();
+            }else{
+                currentUser.stopBreak();
+                takeBreakBtn.setText(R.string.end_break_btn);
+                gotOffFromBreak = true;
+                setCheckedInTitle();
             }
         }
     };
