@@ -1,10 +1,16 @@
 package com.example.leand.tig164_beardeddragon.CheckIn;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
+
+import com.example.leand.tig164_beardeddragon.Calendar.CalendarActivity;
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarDataPump;
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarEntry;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimeZone;
@@ -17,6 +23,9 @@ public class CheckInTime {
 
     private static String logString;
     private static Calendar rightNow;
+    private static ArrayList<CalendarEntry> calendarEntries;
+    private static ArrayList<String> conditions;
+    private static boolean isWork;
 
     public static void addToLogString(String s) {
         if (logString == null) {
@@ -86,7 +95,67 @@ public class CheckInTime {
         }
     }
 
-    //public String getScheduleHours(){
+    public static String getScheduleHours(){
 
-    //}
+        calendarEntries    = new ArrayList<>(CalendarDataPump.getDB());
+        String startTime   = "";
+        String endTime     = "";
+        String currentDate = getCurrentDate();
+
+            for ( CalendarEntry ce : calendarEntries) {
+                isWork = ce.getStartDate().substring(0, 9).equalsIgnoreCase(currentDate);
+                if(isWork && ce.isBookedshift()){
+                    startTime = ce.getStartDate().substring(11, 15);
+                    endTime = ce.getEndDate().substring(11, 15);
+                }else if(isWork && ce.isAbsenceRequest()){
+                    startTime = ce.getStartDate().substring(11, 15);
+                    endTime = ce.getEndDate().substring(11, 15);
+                }else if(isWork && ce.isAvailableShift()){
+                    startTime = ce.getStartDate().substring(11, 15);
+                    endTime = ce.getEndDate().substring(11, 15);
+                }else if(isWork && ce.isAvailableShift()){
+                    startTime = ce.getStartDate().substring(11, 15);
+                    endTime = ce.getEndDate().substring(11, 15);
+                }
+            }
+
+        if(!startTime.equals("")){
+            return startTime + "-" + endTime;
+        }else{
+            return "DOBBY IS FREE";
+        }
+    }
+
+    public static String getPassStatus(){
+        calendarEntries     = new ArrayList<>(CalendarDataPump.getDB());
+        String status       = "";
+        String currentDate  = getCurrentDate();
+
+        for ( CalendarEntry ce : calendarEntries) {
+            isWork = ce.getStartDate().substring(0, 9).equalsIgnoreCase(currentDate);
+            if(isWork && ce.isBookedshift()) {
+                status = "You\'re booked for work at: ";
+            }else if(isWork && ce.isAbsenceRequest()){
+                status = "You've requested absence today at: ";
+            }else if(isWork && ce.isAvailableShift()){
+                status = "You're interested for work at: ";
+            }else if(isWork && ce.isAvailableShift()){
+                status = "There is work available today at: ";
+            }
+        }
+
+        if(!status.equals("")) {
+            return status;
+        }else{
+            return "Nothing is booked today";
+        }
+    }
+
+    public static String getCurrentDate() {
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd");
+        Date now = new Date();
+        String strDate = sdfDate.format(now);
+        return strDate;
+        //return sdfDate.format(new Date());
+    }
 }

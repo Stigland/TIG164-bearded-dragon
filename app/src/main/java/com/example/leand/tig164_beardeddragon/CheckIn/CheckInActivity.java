@@ -15,6 +15,11 @@ import org.w3c.dom.Text;
 /**
  * Created by anton on 2016-05-03.
  */
+
+/*
+ * Toast.makeText(getApplicationContext, sdfDate.format(new Date()), Toast.LENGTH_LONG).show();
+ */
+
 public class CheckInActivity extends AppCompatActivity{
 
     private Button checkInBtn;
@@ -48,9 +53,10 @@ public class CheckInActivity extends AppCompatActivity{
             currentUser = new CheckInSession(CheckedInActivity.currentUser);
         }
 
-        //workPassTimeTV = (TextView) findViewById(R.id.schedule_time_tv);
-       // workPassTimeTV.setText()
-        // Connects check in switch to xml and assigns listener
+        workPassTimeTV = (TextView) findViewById(R.id.schedule_time_tv);
+        workPassTimeTV.setText(CheckInTime.getScheduleHours());
+
+        // Connects check in button to xml and assigns listener
         checkInBtn = (Button) findViewById(R.id.check_in_btn);
         assert checkInBtn != null;
         checkInBtn.setOnClickListener(checkInOnClickListener);

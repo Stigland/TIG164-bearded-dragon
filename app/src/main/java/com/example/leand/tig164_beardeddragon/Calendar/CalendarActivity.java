@@ -68,9 +68,6 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        MainActivity.sql = getBaseContext().openOrCreateDatabase("test1.db",MODE_PRIVATE, null);
-        CalendarEntryDatabase.createDB(MainActivity.sql);
-
         linearLayout = (LinearLayout) findViewById(R.id.calendar_main_layout);
 
         initiateCalendar(caldroidFragment);
@@ -180,6 +177,8 @@ public class CalendarActivity extends AppCompatActivity {
     public static SQLiteDatabase getSql() {
         return MainActivity.sql;
     }
+
+    public static void setSql(SQLiteDatabase newDB){ MainActivity.sql = newDB; }
 
     public static Date getOldDate() {
         return oldDate;
