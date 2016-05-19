@@ -23,6 +23,7 @@ import org.w3c.dom.Text;
 public class CheckInActivity extends AppCompatActivity{
 
     private Button checkInBtn;
+    private TextView workPassStatusTV;
     private TextView workPassTimeTV;
     public static CheckInSession currentUser;
 
@@ -53,8 +54,10 @@ public class CheckInActivity extends AppCompatActivity{
             currentUser = new CheckInSession(CheckedInActivity.currentUser);
         }
 
-        workPassTimeTV = (TextView) findViewById(R.id.schedule_time_tv);
+        workPassTimeTV   = (TextView) findViewById(R.id.schedule_time_tv);
+        workPassStatusTV = (TextView) findViewById(R.id.check_in_title);
         workPassTimeTV.setText(CheckInTime.getScheduleHours());
+        workPassStatusTV.setText(CheckInTime.getPassStatus());
 
         // Connects check in button to xml and assigns listener
         checkInBtn = (Button) findViewById(R.id.check_in_btn);

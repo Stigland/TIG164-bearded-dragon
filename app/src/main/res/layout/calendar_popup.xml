@@ -77,4 +77,32 @@
         android:textColor="#000000"
         android:typeface="normal"
         android:background="@drawable/buttonshape"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="1"
+            android:columnCount="2">
+
+            <Spinner
+                android:id="@+id/spinner_start"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0" />
+
+            <Spinner
+                android:id="@+id/spinner_end"
+                android:layout_width="174dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+        </GridLayout>
+
+    </LinearLayout>
+
 </LinearLayout>
