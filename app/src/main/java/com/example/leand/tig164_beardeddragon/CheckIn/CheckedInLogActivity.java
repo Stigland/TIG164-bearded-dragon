@@ -13,27 +13,17 @@ import com.example.leand.tig164_beardeddragon.R;
  */
 public class CheckedInLogActivity extends AppCompatActivity{
 
-    //private Button backToCheckOut;
-    private TextView logTitle;
     private TextView logTV;
-    private Button backBtn;
 
-    View.OnClickListener backToMainOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent i = new Intent(getBaseContext(), CheckedInActivity.class);
-            startActivity(i);
-            finish();
-        }
-    };
+    @Override
+    public void onBackPressed(){
+        finish();
+    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log);
 
-        backBtn = (Button) findViewById(R.id.back_btn);
-        backBtn.setOnClickListener(backToMainOnClickListener);
-        assert backBtn != null;
         logTV = (TextView) findViewById(R.id.schedule_log_tv);
         logTV.setText(CheckInTime.getLogString());
     }

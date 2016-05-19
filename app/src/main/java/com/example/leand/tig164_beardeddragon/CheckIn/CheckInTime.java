@@ -1,7 +1,11 @@
 package com.example.leand.tig164_beardeddragon.CheckIn;
 
+import com.example.leand.tig164_beardeddragon.Calendar.CalendarDataPump;
+import com.example.leand.tig164_beardeddragon.Calendar.CalendarEntry;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.TimeZone;
 
 /**
@@ -13,11 +17,12 @@ public class CheckInTime {
     private static String logString;
     private static Calendar rightNow;
 
-    public static String addToLogString(String s) {
+    public static void addToLogString(String s) {
         if (logString == null) {
-            logString = "";
+            logString = "" + s;
+        }else{
+            logString = logString + s;
         }
-        return logString = logString + s;
     }
 
     public static String getLogString(){
@@ -51,7 +56,7 @@ public class CheckInTime {
         rightNow.setTimeInMillis(System.currentTimeMillis());
 
         int[] rawTime     = {rightNow.get(Calendar.HOUR), rightNow.get(Calendar.MINUTE),
-                            rightNow.get(Calendar.SECOND)};
+                             rightNow.get(Calendar.SECOND)};
         String[] fineTime = new String[3];
         int s = 0;
 
@@ -79,4 +84,8 @@ public class CheckInTime {
             }
         }
     }
+
+    /*public String getScheduleHours(){
+        List<CalendarEntry> ce = new ArrayList<~>(CalendarDataPump.fetchFromDB());
+    }*/
 }

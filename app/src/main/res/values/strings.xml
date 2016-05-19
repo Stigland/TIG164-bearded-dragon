@@ -11,5 +11,9 @@
     <string name="checkIn_switch_off">Checked out</string>
     <string name="take_break_switch_on">On break</string>
     <string name="take_break_switch_off">Check in to take a break</string>
-
+    <string name="checked_in_on_break">You are on break</string>
+    <string name="checked_in_off_break">Welcome back to work</string>
+    <string name="checked_in_title_text">You are checked in and ready to work</string>
+    <string name="end_break_btn">End break</string>
+    <string name="start_break_btn">Start break</string>
 </resources>

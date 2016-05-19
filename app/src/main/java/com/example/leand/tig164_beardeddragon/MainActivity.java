@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarActivity;
 import com.example.leand.tig164_beardeddragon.CheckIn.CheckInActivity;
+import com.example.leand.tig164_beardeddragon.CheckIn.CheckedInActivity;
 import com.example.leand.tig164_beardeddragon.Contacts.ContactsActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openContactsOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(getBaseContext(), ContactsActivity.class);
                 startActivity(i);
 
@@ -53,10 +53,13 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener openCheckInOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(getBaseContext(), CheckInActivity.class);
-                startActivity(i);
-
+               if(CheckInActivity.currentUser != null && CheckInActivity.currentUser.checkedIn){
+                   Intent i = new Intent(getBaseContext(), CheckedInActivity.class);
+                   startActivity(i);
+               }else{
+                   Intent i = new Intent(getBaseContext(), CheckInActivity.class);
+                   startActivity(i);
+               }
             }
         };
         OpenCheckInBtn.setOnClickListener(openCheckInOnClickListener);
