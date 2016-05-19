@@ -1,5 +1,9 @@
 package com.example.leand.tig164_beardeddragon.Contacts;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +33,7 @@ public class ContactsActivity extends AppCompatActivity {
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+/*        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override
             public void onGroupExpand(int groupPosition) {
@@ -38,8 +42,8 @@ public class ContactsActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
-
-        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+*/
+/*        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
 
             @Override
             public void onGroupCollapse(int groupPosition) {
@@ -49,21 +53,44 @@ public class ContactsActivity extends AppCompatActivity {
 
             }
         });
-
+*/
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        expandableListTitle.get(groupPosition)
-                                + expandableListDetail.get(
-                                expandableListTitle.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT
-                ).show();
+
+
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+
+                String text = expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
+
+                if(text.matches("[0-9]+") && text.length() > 2){
+                    String uri = "tel: " + text.trim() ;
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse(uri));
+                    startActivity(intent);
+                }
+
+                else if(text.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
+                    Intent it = new Intent(Intent.ACTION_SEND_MULTIPLE);
+                    it.putExtra(Intent.EXTRA_EMAIL, text);
+                    it.setType("message/rfc822");
+                    startActivity(it);
+                }
+
+                else{
+                    String url = "https://www.messenger.com/t/" + text;
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
+
+                /*else {
+                    Toast.makeText(getApplicationContext(), "Could not connect to application", Toast.LENGTH_SHORT).show();
+                }*/
+
                 return false;
             }
         });
+
     }
 
 }
