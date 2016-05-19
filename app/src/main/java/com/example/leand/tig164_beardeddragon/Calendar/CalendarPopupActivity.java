@@ -78,6 +78,7 @@ public class CalendarPopupActivity extends Activity {
                                 Toast.makeText(getBaseContext(),"Something went wrong",Toast.LENGTH_LONG).show();
                             }
                             CalendarActivity.caldroidFragment.refreshView();
+                            finish();
                         }
 
                     })
@@ -102,6 +103,7 @@ public class CalendarPopupActivity extends Activity {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getBaseContext(),"Status updated to 'not available'",Toast.LENGTH_SHORT).show();
                            // CalendarActivity.updateCalendar();
+                            finish();
                         }
                     })
                     .setNegativeButton("No", null)
@@ -124,6 +126,7 @@ public class CalendarPopupActivity extends Activity {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getBaseContext(),"Absence request has been registered",Toast.LENGTH_SHORT).show();
                             //CalendarActivity.updateCalendar();
+                            finish();
                         }
                     })
                     .setNegativeButton("No", null)
@@ -146,6 +149,7 @@ public class CalendarPopupActivity extends Activity {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getBaseContext(),"Absence request has been removed",Toast.LENGTH_SHORT).show();
                             //CalendarActivity.updateCalendar();
+                            finish();
                         }
                     })
                     .setNegativeButton("No", null)
@@ -168,6 +172,7 @@ public class CalendarPopupActivity extends Activity {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(getBaseContext(),"The shift is now yours",Toast.LENGTH_SHORT).show();
                             //CalendarActivity.updateCalendar();
+                            finish();
                         }
                     })
                     .setNegativeButton("Nope", null)
