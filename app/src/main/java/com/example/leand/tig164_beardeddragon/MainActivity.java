@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarActivity;
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarEntryDatabase;
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private Button OpenCalendarBtn;
     private Button OpenContactsBtn;
     private Button OpenCheckInBtn;
+    private TextView calendarTv;
+    private TextView contactsTv;
+    private TextView checkInTv;
     public static SQLiteDatabase sql;
 
     @Override
@@ -33,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         OpenCalendarBtn   = (Button) findViewById(R.id.menu_OpenCalendar_Btn);
         OpenContactsBtn   = (Button) findViewById(R.id.menu_OpenContacts_Btn);
         OpenCheckInBtn    = (Button) findViewById(R.id.menu_OpenCheckIn_Btn);
+        calendarTv        = (TextView)findViewById(R.id.calendar_tv);
+        contactsTv        = (TextView)findViewById(R.id.contacts_tv);
+        checkInTv         = (TextView)findViewById(R.id.check_in_tv);
 
         //Open Calendar
         View.OnClickListener openCalendarOnClickListener = new View.OnClickListener() {
@@ -45,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         OpenCalendarBtn.setOnClickListener(openCalendarOnClickListener);
+        calendarTv.setOnClickListener(openCalendarOnClickListener);
 
         //Open Contacts
         View.OnClickListener openContactsOnClickListener = new View.OnClickListener() {
@@ -56,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         OpenContactsBtn.setOnClickListener(openContactsOnClickListener);
+        contactsTv.setOnClickListener(openContactsOnClickListener);
 
         //Open Check In
         View.OnClickListener openCheckInOnClickListener = new View.OnClickListener() {
@@ -71,5 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         OpenCheckInBtn.setOnClickListener(openCheckInOnClickListener);
+        checkInTv.setOnClickListener(openCheckInOnClickListener);
+
     }
 }
