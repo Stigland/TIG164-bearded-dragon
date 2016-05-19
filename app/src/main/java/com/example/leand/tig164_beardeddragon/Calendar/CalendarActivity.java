@@ -44,6 +44,7 @@ import hirondelle.date4j.DateTime;
  * Remove popup activity after registration
  * Add selection fields for work hours
  * Save new registration to db and update view
+ * Potentially create cross-referencing for SQLiteDatabase objects in MainActivity
   */
 public class CalendarActivity extends AppCompatActivity {
 
