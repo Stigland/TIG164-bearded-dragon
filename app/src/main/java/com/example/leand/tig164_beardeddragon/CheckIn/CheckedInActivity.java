@@ -90,7 +90,7 @@ public class CheckedInActivity extends AppCompatActivity{
         checkedInTitle = (TextView) findViewById(R.id.checked_in_title);
 
         currentUser = new CheckInSession(CheckInActivity.currentUser);
-        //currentUser.checkIn();
+        setCheckedInTitle();
 
         // Connects check in switch to xml and assigns listener
         takeBreakBtn = (Button) findViewById(R.id.take_break_btn);

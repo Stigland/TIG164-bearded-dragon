@@ -3,6 +3,7 @@ package com.example.leand.tig164_beardeddragon.CheckIn;
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarDataPump;
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarEntry;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -85,7 +86,7 @@ public class CheckInTime {
         }
     }
 
-    /*public String getScheduleHours(){
-        List<CalendarEntry> ce = new ArrayList<~>(CalendarDataPump.fetchFromDB());
-    }*/
+    //public String getScheduleHours(){
+
+    //}
 }
