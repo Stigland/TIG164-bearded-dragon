@@ -5,7 +5,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
+import com.example.leand.tig164_beardeddragon.MainActivity;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by leand on 2016-05-10.
@@ -48,5 +52,22 @@ public class CalendarEntryDatabase {
                 // re-run query, etc.
             }
         }
+
+        public static void updateDB(Date start, Date end, boolean interested,
+                                    boolean availableShift, boolean bookedShift,
+                                    boolean absenceRequest) {
+            SQLiteDatabase sql = MainActivity.sql;
+            String startDate = CalendarEntryFunctionality.dateToString(start);
+            String endDate = CalendarEntryFunctionality.dateToString(end);
+            int interestedInt CalendarDataPump.boolToInt(interested);
+            int bookedShiftInt CalendarDataPump.boolToInt(bookedShift);
+            int absenceRequestInt CalendarDataPump.boolToInt(absenceRequest);
+            int availableShiftInt CalendarDataPump.boolToInt(availableShift);
+
+            sql.execSQL("Insert into shift values('"+startDate+"','"+endDate+"',"+interestedInt+","
+                                  +bookedShiftInt+","+absenceRequestInt+","+availableShiftInt+");");
+    }
+    }
+
     }
 }
