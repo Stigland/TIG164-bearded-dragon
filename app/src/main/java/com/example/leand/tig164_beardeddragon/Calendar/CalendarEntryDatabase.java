@@ -67,4 +67,18 @@ public class CalendarEntryDatabase {
         sql.execSQL("Insert into shift values('"+startDate+"','"+endDate+"',"+interestedInt+","
                     +bookedShiftInt+","+absenceRequestInt+","+availableShiftInt+");");
     }//updateDB
+
+    public static void updateDB(Date start, Date end, boolean interested,
+                                boolean availableShift, boolean bookedShift,
+                                boolean absenceRequest) {
+        SQLiteDatabase sql    = MainActivity.sql;
+        String startDate      = CalendarEntryFunctionality.dateToString(start);
+        String endDate        = CalendarEntryFunctionality.dateToString(end);
+        int interestedInt     = CalendarDataPump.boolToInt(interested);
+        int bookedShiftInt    = CalendarDataPump.boolToInt(bookedShift);
+        int absenceRequestInt = CalendarDataPump.boolToInt(absenceRequest);
+        int availableShiftInt = CalendarDataPump.boolToInt(availableShift);
+        sql.execSQL("Update shift values('"+startDate+"','"+endDate+"',"+interestedInt+","
+                +bookedShiftInt+","+absenceRequestInt+","+availableShiftInt+");");
+    }
 }//class

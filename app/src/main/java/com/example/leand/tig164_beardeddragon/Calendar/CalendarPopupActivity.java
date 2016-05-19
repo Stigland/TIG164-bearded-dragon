@@ -6,8 +6,11 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +23,7 @@ import java.util.List;
 /**
  * Created by leand on 2016-05-16.
  */
-public class CalendarPopupActivity extends Activity {
+public class CalendarPopupActivity extends Activity/* implements AdapterView.OnItemSelectedListener */{
 
     private Button setInterestedBtn;
     private Button rmInterestedBtn;
@@ -30,6 +33,10 @@ public class CalendarPopupActivity extends Activity {
     private String stringDate;
     private TextView dateTv;
     private TextView statusTv;
+    private Spinner startSpinner;
+    private Spinner endSpinner;
+    private ArrayAdapter<CharSequence> adapter;
+
     private CalendarEntry workingCe;
 
     @Override
@@ -37,7 +44,6 @@ public class CalendarPopupActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar_popup);
 
-        setInterestedBtn = (Button)  findViewById(R.id.calendar_popup_set_interested_btn);
         rmInterestedBtn  = (Button)  findViewById(R.id.calendar_popup_rm_interested_btn);
         setAbsenceBtn    = (Button)  findViewById(R.id.calendar_popup_set_absence_btn);
         rmAbsenceBtn     = (Button)  findViewById(R.id.calendar_popup_rm_absence_btn);
@@ -45,6 +51,15 @@ public class CalendarPopupActivity extends Activity {
         dateTv           = (TextView)findViewById(R.id.calendar_popup_date_tv);
         statusTv         = (TextView)findViewById(R.id.calendar_popup_status_tv);
         stringDate       = CalendarEntryFunctionality.dateToDayString(CalendarActivity.getOldDate());
+        setInterestedBtn = (Button)  findViewById(R.id.calendar_popup_set_interested_btn);
+        startSpinner     = (Spinner) findViewById(R.id.spinner_start);
+        endSpinner       = (Spinner) findViewById(R.id.spinner_end);
+        adapter          = ArrayAdapter.createFromResource(this,
+                           R.array.work_times, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        startSpinner.setAdapter(adapter);
+        endSpinner.setAdapter(adapter);
 
         //Resizes activity window
         DisplayMetrics dm = new DisplayMetrics();
@@ -56,6 +71,16 @@ public class CalendarPopupActivity extends Activity {
         //Basic initialization of popup
         dateTv.setText(stringDate);
         workingCe = initPopupButtons(CalendarActivity.getOldDate());
+
+        /*public void onItemSelected(AdapterView<?> parent, View view,
+                                   int pos, long id) {
+            // An item was selected. You can retrieve the selected item using
+            startSpinner.getItemAtPosition(pos);
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Another interface callback
+        }*/
 
         //set user as available
         View.OnClickListener setInterestedOnClickListener = new View.OnClickListener() {
