@@ -24,6 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.leand.tig164_beardeddragon.MainActivity;
 import com.example.leand.tig164_beardeddragon.R;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
@@ -39,7 +40,11 @@ import hirondelle.date4j.DateTime;
 /**
  * Created by leand on 2016-05-03.
  */
-
+/* TODO
+ * Remove popup activity after registration
+ * Add selection fields for work hours
+ * Save new registration to db and update view
+  */
 public class CalendarActivity extends AppCompatActivity {
 
     private Calendar cal = Calendar.getInstance();
@@ -56,15 +61,14 @@ public class CalendarActivity extends AppCompatActivity {
     private TextView dateTv;
     private TextView statusTv;
     public static Date oldDate = new Date();
-    public static SQLiteDatabase sql;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        sql = getBaseContext().openOrCreateDatabase("test1.db",MODE_PRIVATE, null);
-        CalendarEntryDatabase.createDB(sql);
+        MainActivity.sql = getBaseContext().openOrCreateDatabase("test1.db",MODE_PRIVATE, null);
+        CalendarEntryDatabase.createDB(MainActivity.sql);
 
         linearLayout = (LinearLayout) findViewById(R.id.calendar_main_layout);
 
@@ -173,7 +177,7 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     public static SQLiteDatabase getSql() {
-        return sql;
+        return MainActivity.sql;
     }
 
     public static Date getOldDate() {

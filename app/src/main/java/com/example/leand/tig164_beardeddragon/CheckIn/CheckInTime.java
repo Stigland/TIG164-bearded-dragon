@@ -86,8 +86,7 @@ public class CheckInTime {
         }
     }
 
-    /*public String getScheduleHours(){
-        List<CalendarEntry> ce = new ArrayList<>(CalendarDataPump.fetchFromDB());
+    //public String getScheduleHours(){
 
-    }*/
+    //}
 }

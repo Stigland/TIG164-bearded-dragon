@@ -1,26 +1,34 @@
 package com.example.leand.tig164_beardeddragon;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.leand.tig164_beardeddragon.Calendar.CalendarActivity;
+import com.example.leand.tig164_beardeddragon.Calendar.CalendarEntryDatabase;
 import com.example.leand.tig164_beardeddragon.CheckIn.CheckInActivity;
 import com.example.leand.tig164_beardeddragon.CheckIn.CheckedInActivity;
 import com.example.leand.tig164_beardeddragon.Contacts.ContactsActivity;
+
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button OpenCalendarBtn;
     private Button OpenContactsBtn;
     private Button OpenCheckInBtn;
+    public static SQLiteDatabase sql;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sql = getBaseContext().openOrCreateDatabase("test1.db",MODE_PRIVATE, null);
+        CalendarEntryDatabase.createDB(sql);
 
         OpenCalendarBtn   = (Button) findViewById(R.id.menu_OpenCalendar_Btn);
         OpenContactsBtn   = (Button) findViewById(R.id.menu_OpenContacts_Btn);

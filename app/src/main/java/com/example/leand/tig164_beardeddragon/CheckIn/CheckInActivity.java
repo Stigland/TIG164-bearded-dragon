@@ -48,6 +48,8 @@ public class CheckInActivity extends AppCompatActivity{
             currentUser = new CheckInSession(CheckedInActivity.currentUser);
         }
 
+        //workPassTimeTV = (TextView) findViewById(R.id.schedule_time_tv);
+       // workPassTimeTV.setText()
         // Connects check in switch to xml and assigns listener
         checkInBtn = (Button) findViewById(R.id.check_in_btn);
         assert checkInBtn != null;
