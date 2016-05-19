@@ -97,8 +97,16 @@ public class CalendarDataPump {
         return ce;
     }
 
-    private static boolean intToBool(int i) {
+    public static boolean intToBool(int i) {
         return i>0;
+    }
+
+    public static int boolToInt(boolean b) {
+        if(b) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
 }
