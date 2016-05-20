@@ -15,15 +15,27 @@ After this, just open provided APK with package installer and accept. That's it!
 
 #####Alternative 2.#####
 Install an android virtual device on your computer. We've used Genymotion, but any emulator should do. 
-A list of recomended emulators with links has been provided below. After installation, drag and drop APK-file in emulator, and the app should be ready to tock right away. 
+A list of recomended emulators with links has been provided below. After installation, drag and drop APK-file in emulator, and the app should be ready to rock right away. 
 
 >Genymotion: https://www.genymotion.com/      
 >Andy:	     http://andyroid.net/     
 >Bluestacks: http://www.bluestacks.com/      
 
-If you have any questions, contact gusleajoa@student.gu.se
+#####Functionality######
+In the app, the user can check their work schedule, check in to current shift and view colleagues contact information.
+There is a database serving the app with info, though the functionality to update, 
+say, shifts from the calendar hasn't been implemented. Therefore, when you try to make a new registration i the calendar, 
+the colors in the cells won't update.
 
-###To view source code### 
+The check-in function matches the device's current date with the calendar and shows work times if there are any.
+
+The 'colleagues' function shows some sample contact information. Try clicking the list-items and watch the magic unfold.
+
+Have fun! 
+
+>If you have any questions, contact gusleajoa@student.gu.se
+
+### To view source code ### 
 
 Open and compile in your favourite IDE. We've been working in Android Studio.
 
