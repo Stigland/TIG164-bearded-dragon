@@ -78,7 +78,18 @@ public class CalendarEntryDatabase {
         int bookedShiftInt    = CalendarDataPump.boolToInt(bookedShift);
         int absenceRequestInt = CalendarDataPump.boolToInt(absenceRequest);
         int availableShiftInt = CalendarDataPump.boolToInt(availableShift);
-        sql.execSQL("Update shift values('"+startDate+"','"+endDate+"',"+interestedInt+","
+        sql.execSQL("UPDATE shift SET"+startDate+"','"+endDate+"',"+interestedInt+","
                 +bookedShiftInt+","+absenceRequestInt+","+availableShiftInt+");");
+    }
+
+    public static void updateDBinterested(CalendarEntry ce) {
+        SQLiteDatabase sql    = MainActivity.sql;
+
+        try {
+            sql.execSQL("UPDATE shift SET interested=" + CalendarDataPump.boolToInt(ce.interested) + " WHERE startDate='" + ce.startDate + "';");
+        } catch (SQLiteException e) {
+            sql.execSQL("Insert into shift values('" + ce.startDate +"','"+ce.startDate+"',"+CalendarDataPump.boolToInt(ce.interested)+","+CalendarDataPump.boolToInt(ce.bookedShift)
+                    +","+CalendarDataPump.boolToInt(ce.absenceRequest)+","+CalendarDataPump.boolToInt(ce.availableShift)+ ";");
+        }
     }
 }//class

@@ -63,12 +63,21 @@ public class CalendarActivity extends AppCompatActivity {
     private TextView statusTv;
     public static Date oldDate = new Date();
 
+    static ColorDrawable myShiftsGreen;
+    static ColorDrawable interestedYellow;
+    static ColorDrawable availableBlue;
+    static ColorDrawable absenceOrange;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
         linearLayout = (LinearLayout) findViewById(R.id.calendar_main_layout);
+        myShiftsGreen = new ColorDrawable(getResources().getColor(R.color.lightGreen));
+        interestedYellow = new ColorDrawable(getResources().getColor(R.color.yellow));
+        availableBlue = new ColorDrawable(getResources().getColor(R.color.lightBlue));
+        absenceOrange = new ColorDrawable(getResources().getColor(R.color.orange));
 
         initiateCalendar(caldroidFragment);
 
@@ -105,7 +114,6 @@ public class CalendarActivity extends AppCompatActivity {
                 caldroidFragment.setBackgroundDrawableForDate(selectionBlue, date);
                 oldDate = date;
 
-
                 //initPopup(date);
                 caldroidFragment.refreshView();
 
@@ -118,12 +126,7 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     //Updates calendar statuses in calendar based on existing DB records
-    public void updateCalendarStatuses(List<CalendarEntry> ce){
-
-        final ColorDrawable myShiftsGreen = new ColorDrawable(getResources().getColor(R.color.lightGreen));
-        final ColorDrawable interestedYellow = new ColorDrawable(getResources().getColor(R.color.yellow));
-        final ColorDrawable availableBlue = new ColorDrawable(getResources().getColor(R.color.lightBlue));
-        final ColorDrawable absenceOrange = new ColorDrawable(getResources().getColor(R.color.orange));
+    public static void updateCalendarStatuses(List<CalendarEntry> ce){
 
         for (CalendarEntry c : ce)  {
 

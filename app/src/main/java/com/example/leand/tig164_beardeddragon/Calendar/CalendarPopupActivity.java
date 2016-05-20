@@ -97,7 +97,9 @@ public class CalendarPopupActivity extends Activity/* implements AdapterView.OnI
                         public void onClick(DialogInterface dialog, int which) {
                             if(!workingCe.interested) {
                                 workingCe.setInterested(true);
-                                //CalendarActivity.updateCalendar();
+                                CalendarEntryDatabase.updateDBinterested(workingCe);
+                                CalendarActivity.updateCalendarStatuses(CalendarDataPump.getDB());
+                                CalendarActivity.caldroidFragment.refreshView();
                                 Toast.makeText(getBaseContext(),"Status updated to 'available'",Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(getBaseContext(),"Something went wrong",Toast.LENGTH_LONG).show();
@@ -105,7 +107,6 @@ public class CalendarPopupActivity extends Activity/* implements AdapterView.OnI
                             CalendarActivity.caldroidFragment.refreshView();
                             finish();
                         }
-
                     })
                     .setNegativeButton("No", null)
                     .show();
@@ -238,7 +239,8 @@ public class CalendarPopupActivity extends Activity/* implements AdapterView.OnI
                 } else if (c.bookedShift) {
                     setAbsenceBtn.setVisibility(View.VISIBLE);
                     statusTv.setVisibility(View.VISIBLE);
-                    statusTv.setText("Start: " + cDayString + "\nEnd:  " +
+                    statusTv.setText("Start: " + CalendarEntryFunctionality.dateTotimeString(
+                            CalendarEntryFunctionality.stringToDate(c.startDate)) + "\nEnd:  " +
                                      CalendarEntryFunctionality.dateTotimeString(
                                      CalendarEntryFunctionality.stringToDate(c.endDate)));
                 } else {
