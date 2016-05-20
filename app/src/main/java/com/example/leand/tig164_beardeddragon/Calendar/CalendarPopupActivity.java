@@ -66,7 +66,7 @@ public class CalendarPopupActivity extends Activity/* implements AdapterView.OnI
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-        getWindow().setLayout((int)(width*.5), (int)(width*.34));
+        getWindow().setLayout((int)(width*.5), (int)(width*.4));
 
         //Basic initialization of popup
         dateTv.setText(stringDate);

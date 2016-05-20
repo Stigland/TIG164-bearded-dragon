@@ -6,10 +6,10 @@
     <color name="darkBlue">#004E66</color>
     <color name="darkBlue2">#006989</color>
     <color name="backgroundBlue">#e1eef6</color>
-    <color name="orange">#e03f00</color>
-    <color name="yellow">#dbd300</color>
-    <color name="lightBlue">#00abdb</color>
-    <color name="lightGreen">#00db54</color>
+    <color name="orange">#FF5F2E</color>
+    <color name="yellow">#fcbe32</color>
+    <color name="lightBlue">#08B9F1</color>
+    <color name="lightGreen">#75D701</color>
     <color name="transparent">#40000000</color>
 
 </resources>
