@@ -1,6 +1,28 @@
-# TIG164-bearded-dragon #
+# SCHEMAPP #
+
+Open in browser to see rendered markup.
 
 ### Scheduling application for small companies, written in Java for Android ###
+
+### How to run the APK ###
+
+There are two alternatives to run the provided APK installation file.
+
+#####Alternative 1.#####
+Install on your Android Device with Android version 4.2 or higher. 
+To do this, enable developer options by entering settings > About Phone > Tap 'Build Number' 5 times. You should now have developer right to the phone.
+After this, just open provided APK with package installer and accept. That's it!
+
+#####2.#####
+Install an android virtual device on your computer. We've used Genymotion, but any emulator should do. 
+A list of recomended emulators with links has been provided below. After installation, drag and drop APK-file in emulator, and the app should be ready to tock right away. 
+
+>Genymotion: https://www.genymotion.com/ 
+>Andy:	     http://andyroid.net/
+>Bluestacks: http://www.bluestacks.com/
+
+
+ 
 
 Open and compile in your favourite IDE. We've been working in Android Studio.
 
