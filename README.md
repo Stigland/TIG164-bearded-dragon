@@ -6,7 +6,7 @@ Open in browser to see rendered markup.
 
 ### How to install the application ###
 
-There are two alternatives to run the provided APK installation file.
+There are two alternatives to run the provided APK installation file. (Provided via GUL)
 
 #####Alternative 1.#####
 Install on your Android Device with Android version 4.2 or higher. 
