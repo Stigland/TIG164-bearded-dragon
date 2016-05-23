@@ -33,8 +33,6 @@ The 'colleagues' function shows some sample contact information. Try clicking th
 
 Have fun! 
 
->If you have any questions, contact gusleajoa@student.gu.se
-
 ### Source code ### 
 
 Open using Android Studio
