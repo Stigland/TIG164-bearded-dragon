@@ -35,16 +35,9 @@ Have fun!
 
 >If you have any questions, contact gusleajoa@student.gu.se
 
-##### Developers #####
-
-Mikaela Holmer, Johannes Leander, Edvin Stigland, Anton Wahlberg
-
-@2016
-
-### To view source code ### 
+### Source code ### 
 
 Open using Android Studio
-
 
 #### Naming conventions ####
 All component for x activity must be start with activity name.
@@ -70,3 +63,12 @@ For example,name for login activity component should be like following.
 * GalleryView - gv
 * LinearLayout -ll
 * RelativeLayout - rl
+
+##### Developers #####
+
+Mikaela Holmer,
+Johannes Leander, 
+Edvin Stigland, 
+Anton Wahlberg
+
+@2016
