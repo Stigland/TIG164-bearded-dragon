@@ -10,12 +10,12 @@ There are two alternatives to run the provided APK installation file.
 
 #####Alternative 1.#####
 Install on your Android Device with Android version 4.2 or higher. 
-To do this, enable developer options by entering settings > About Phone > Tap 'Build Number' 5 times. You should now have developer right to the phone.
-After this, just open provided APK with package installer and accept. That's it!
+To do this, enable developer options by entering settings > About Phone > Tap 'Build Number' 5 times. You should now have developer rights to the phone. Transfer the file to your phone via your computer. 
+After this, through your phone, just open provided APK with package installer and accept. That's it!
 
 #####Alternative 2.#####
 Install an android virtual device on your computer. We've used Genymotion, but any emulator should do. 
-A list of recomended emulators with links has been provided below. After installation, drag and drop APK-file in emulator, and the app should be ready to rock right away. 
+A list of recomended emulators with links has been provided below. After installation, drag and drop APK-file in emulator, and the app should be ready to rock right away. Magical, right?
 
 >Genymotion: https://www.genymotion.com/      
 >Andy:	     http://andyroid.net/     
@@ -35,13 +35,15 @@ Have fun!
 
 >If you have any questions, contact gusleajoa@student.gu.se
 
+##### Developers #####
+
+Mikaela Holmer, Johannes Leander, Edvin Stigland, Anton Wahlberg
+
+@2016
+
 ### To view source code ### 
 
-Open and compile in your favourite IDE. We've been working in Android Studio.
-
-To pull recent update from the master branch, execute 'git pull origin master'
-
-To publish updates to the code, execute 'git push origin master'
+Open using Android Studio
 
 
 #### Naming conventions ####
@@ -68,10 +70,3 @@ For example,name for login activity component should be like following.
 * GalleryView - gv
 * LinearLayout -ll
 * RelativeLayout - rl
-
-#### Colors ####
-
-To set predefined colors or use existing ones, check res/values/colors.xml and use designated color for intended element.
-
-e.g.
->darkBlue uses Dark Blue color
